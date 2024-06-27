@@ -5,4 +5,12 @@
 //  Created by Jamerson Macedo on 27/06/24.
 //
 
-import Foundation
+import SwiftUI
+
+enum SplashViewRouter {
+    // tipo o object do kotlin
+    static func makeSignView() -> some View{
+        let viewModel = SignInViewModel()
+        return SignInView(viewModel: viewModel)
+    }
+}

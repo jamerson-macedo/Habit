@@ -15,35 +15,49 @@ struct SignInView: View {
     @State var action:Int? = 0
     @State var navigationHidden = true
     var body: some View {
-        NavigationView{
-            ScrollView(showsIndicators: false ){
-                VStack(alignment:.center, spacing: 20){
-                    Spacer(minLength: 36) // espaco em cima da logo
-                    VStack(alignment: .center,spacing: 8){
-                        Image("logo").resizable().scaledToFit().padding(.horizontal,48)
-                            .background(Color.black)
-                        Text("Login").foregroundColor(Color.orange).font(Font.system(.title).bold())
-                            .padding(.bottom,8)
-                        numberField
-                        passWordField
-                        enterButton
-                        registerLink
-                        Text("Copyright @yyy").foregroundColor(.gray).font(Font.system(size: 16).bold()).padding(.top,16)
-                    }
-                   
+        ZStack{
+            // se o viewmodel for para a tela principal
+            if case SignInUiState.goToHomeScreen = viewModel.uiState{
+                viewModel.homeView()
+            }else {
+                NavigationStack{
+                    ScrollView(showsIndicators: false ){
+                        VStack(alignment:.center, spacing: 20){
+                            Spacer(minLength: 36) // espaco em cima da logo
+                            VStack(alignment: .center,spacing: 8){
+                                Image("logo").resizable().scaledToFit().padding(.horizontal,48)
+                                Text("Login").foregroundColor(Color.orange).font(Font.system(.title).bold())
+                                    .padding(.bottom,8)
+                                emailField
+                                passWordField
+                                enterButton
+                                registerLink
+                                Text("Copyright @yyy").foregroundColor(.gray).font(Font.system(size: 16).bold()).padding(.top,16)
+                            }
+                            
+                        }
+                        if case SignInUiState.error(let value) = viewModel.uiState{
+                            Text("")
+                                .alert(isPresented: .constant(true)){
+                                    Alert(title: Text("Habit"), message: Text(value),dismissButton: .default(Text("Ok")))
+                                }
+                        }
+                        
+                    }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
+                        .padding(.horizontal,32)
+                        .background(Color.white)
+                        .navigationBarTitle("Login", displayMode:.inline)
+                        .navigationBarHidden(navigationHidden)
                 }
-            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
-                .padding(.horizontal,32)
-                .background(Color.white)
-                .navigationBarTitle("Login", displayMode:.inline)
-                .navigationBarHidden(navigationHidden)
+            }
         }
+        
     }
 }
 
 
 extension SignInView {
-    var numberField: some View{
+    var emailField: some View{
         TextField("",text: $email).border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
     }
 }
@@ -55,7 +69,7 @@ extension SignInView {
 extension SignInView {
     var enterButton: some View{
         Button("Entrar",action: {
-            // evento de clique
+            viewModel.login(email: email, password:passWord)
         })
     }
 }
@@ -64,12 +78,10 @@ extension SignInView {
         VStack{
             Text("Ainda não possui login ativo?").foregroundColor(.gray).padding(.top,48)
             ZStack{
-                NavigationLink(destination:Text("Tela de Cadastro"),
-                               tag: 1,
-                               selection: $action,
-                               label: {EmptyView()})
-                Button("Realize seu cadastro"){
-                    self.action=1
+                NavigationLink {
+                    Text("Tela de cadastro")
+                } label: {
+                    Text("Realize seu cadastro")
                 }
             }
         }

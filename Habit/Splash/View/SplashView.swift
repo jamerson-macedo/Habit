@@ -8,25 +8,28 @@
 import SwiftUI
 
 struct SplashView: View {
-    // definindo o tipo que ira iniciar o app
-    @State var state:SplashUiState = .loading
+    @ObservedObject var viewModel : SplashViewModel
     
     var body: some View {
-        switch state{
-        case .loading:
-            loadingView()
-        case .goToSignInScreen:
-            Text("SignIn")
-        case .goToHomeScreen:
-            Text("Home")
-        case .error(let msg):
-            loadingView(error: msg)
-        }
+        Group{
+            switch viewModel.uiState {
+            case .loading:
+                loadingView()
+            case .goToSignInScreen:
+                Text("SignIn")
+            case .goToHomeScreen:
+                Text("Home")
+            case .error(let msg):
+                loadingView(error: msg)
+            }
+        }.onAppear(perform: {
+            viewModel.onAppear()
+        }) // toda vez que a tela aparecer  ele executa
     }
 }
 
 extension SplashView {
-    func loadingView(error:String?=nil) -> some View{
+    func loadingView(error:String? = nil) -> some View{
         ZStack{
             Image("logo").resizable().scaledToFit().frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding(20)
@@ -44,6 +47,8 @@ extension SplashView {
     }
 }
 
-#Preview {
-    SplashView()
+struct SplashView_Previews: PreviewProvider {
+    static var previews: some View {
+        SplashView(viewModel: SplashViewModel())
+    }
 }

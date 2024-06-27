@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     @ObservedObject var viewModel : SplashViewModel
-    
+   
     var body: some View {
         Group{
             switch viewModel.uiState {
@@ -49,6 +49,7 @@ extension SplashView {
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView(viewModel: SplashViewModel())
+        let viewModel = SplashViewModel()
+        SplashView(viewModel: viewModel)
     }
 }

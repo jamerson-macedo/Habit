@@ -20,6 +20,7 @@
 		CF070F4F2C2E11160008D66B /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F4E2C2E11160008D66B /* SignInViewRouter.swift */; };
 		CF070F552C2E119B0008D66B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F542C2E119B0008D66B /* HomeView.swift */; };
 		CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F562C2E11A70008D66B /* HomeViewModel.swift */; };
+		CF070F5C2C2E19400008D66B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F5B2C2E19400008D66B /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		CF070F4E2C2E11160008D66B /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
 		CF070F542C2E119B0008D66B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CF070F562C2E11A70008D66B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CF070F5B2C2E19400008D66B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		CF070F292C2CE4AB0008D66B /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				CF070F582C2E19160008D66B /* SignUp */,
 				CF070F502C2E116D0008D66B /* Home */,
 				CF070F422C2DEF360008D66B /* SignIn */,
 				CF070F382C2CE5260008D66B /* Splash */,
@@ -190,6 +193,38 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		CF070F582C2E19160008D66B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				CF070F5E2C2E19780008D66B /* ViewModel */,
+				CF070F5D2C2E196D0008D66B /* Model */,
+				CF070F5A2C2E19290008D66B /* View */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		CF070F5A2C2E19290008D66B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF070F5B2C2E19400008D66B /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF070F5D2C2E196D0008D66B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF070F5E2C2E19780008D66B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +299,7 @@
 				CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,
 				CF070F492C2DEFBC0008D66B /* SignInViewModel.swift in Sources */,
+				CF070F5C2C2E19400008D66B /* SignUpView.swift in Sources */,
 				CF070F552C2E119B0008D66B /* HomeView.swift in Sources */,
 				CF070F4F2C2E11160008D66B /* SignInViewRouter.swift in Sources */,
 				CF070F3E2C2CE7240008D66B /* SplashUiState.swift in Sources */,

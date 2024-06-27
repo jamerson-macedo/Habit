@@ -12,7 +12,6 @@ struct SignInView: View {
     @State var email = ""
     @State var passWord = ""
     
-    @State var action:Int? = 0
     @State var navigationHidden = true
     var body: some View {
         ZStack{
@@ -78,11 +77,12 @@ extension SignInView {
         VStack{
             Text("Ainda não possui login ativo?").foregroundColor(.gray).padding(.top,48)
             ZStack{
-                NavigationLink {
-                    Text("Tela de cadastro")
+                NavigationLink() {
+                    viewModel.signUpView()
                 } label: {
                     Text("Realize seu cadastro")
                 }
+                
             }
         }
         

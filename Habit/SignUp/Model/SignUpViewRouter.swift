@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 enum SignUpViewRouter {
     static func makeViewHome () -> some View{
         let viewModel = HomeViewModel()

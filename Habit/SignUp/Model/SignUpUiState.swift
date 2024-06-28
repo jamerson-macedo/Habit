@@ -10,5 +10,5 @@ enum SignUpUiState {
     case loading
     case none
     case error(String)
-    case goToHomeScreen
+    case success
 }

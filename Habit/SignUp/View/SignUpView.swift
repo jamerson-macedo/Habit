@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SignUpView: View {
+    @ObservedObject var viewModel :SignUpViewModel
     
     @State var fullName = ""
     @State var email = ""
@@ -15,7 +16,8 @@ struct SignUpView: View {
     @State var document = ""
     @State var phone = ""
     @State var birthday = ""
-    // @State var genere = ""
+    @State var gender = Gender.male // comecar como masculino
+    
     var body: some View {
         ZStack{
             ScrollView(showsIndicators:false){
@@ -30,11 +32,20 @@ struct SignUpView: View {
                         documentField
                         phoneField
                         birthDayField
+                        genderField
                         enterButton
                     }
                     Spacer() // empurra para cima
                 }.padding(.horizontal,8)
             }.padding()
+            if case SignUpUiState.error(let value) = viewModel.uiState{
+                Text("")
+                    .alert(isPresented: .constant(true)){
+                        Alert(title: Text("Habit"), message: Text(value),dismissButton: .default(Text("Ok")){
+                            // faz algo
+                    })
+                }
+            }
         }
     }
 }
@@ -59,6 +70,16 @@ extension SignUpView{
     }
 }
 extension SignUpView{
+    var genderField: some View{
+        Picker("Gender", selection: $gender){
+            // o propio elemento é seu identificador self
+            ForEach(Gender.allCases, id: \.self){ value in
+                Text(value.rawValue).tag(value)
+            }
+        }.pickerStyle(SegmentedPickerStyle()).padding(.top, 16).padding(.bottom,32)
+    }
+}
+extension SignUpView{
     var phoneField : some View{
         TextField("", text: $phone).border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
     }
@@ -71,10 +92,10 @@ extension SignUpView{
 extension SignUpView{
     var enterButton : some View{
         Button("Realize o cadastro"){
-            // viewModel
+            viewModel.signUp()
         }
     }
 }
 #Preview {
-    SignUpView()
+    SignUpView(viewModel: SignUpViewModel())
 }

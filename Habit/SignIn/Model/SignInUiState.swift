@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum SignInUiState{
+enum SignInUiState : Equatable{ // PARA PODER COMPARAR TEM QUE COLOCAR EQUATABLE
     case none // estado parado
     case loading
     case goToHomeScreen

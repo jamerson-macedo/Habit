@@ -12,13 +12,22 @@ struct EditTextView :View{
     var error :String? = nil
     var failure : Bool? = nil
     var keyboard:UIKeyboardType = .default
+    var isSecure : Bool =  false
     @Binding var text :String// tem que ser bind pq ele vai ser chamado por ouyto
     var body: some View{
         VStack{
-            TextField(placeholder,text: $text).foregroundStyle(Color("textColor"))
-                .keyboardType(keyboard)
-                .textFieldStyle(CustomTextField())
+            if isSecure{
+                SecureField(placeholder,text: $text).foregroundStyle(Color("textColor"))
+                    .keyboardType(keyboard)
+                    .textFieldStyle(CustomTextField())
                 
+            }else {
+                TextField(placeholder,text: $text).foregroundStyle(Color("textColor"))
+                    .keyboardType(keyboard)
+                    .textFieldStyle(CustomTextField())
+            }
+            
+            
             // otexto vai aparecer se n for nulo e nem vazio
             if let error = error, !text.isEmpty, failure == true{
                 Text(error).foregroundStyle(Color.red)

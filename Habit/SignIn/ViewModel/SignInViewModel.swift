@@ -30,7 +30,7 @@ class SignInViewModel : ObservableObject{
     func login(email:String, password:String){
         self.uiState = .loading
         DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            self.uiState = .goToHomeScreen
+            self.uiState = .error("uSUARIO NAO ENCONTRADO")
         }
     }
     

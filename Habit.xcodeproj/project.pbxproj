@@ -25,6 +25,8 @@
 		CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F632C2F34A30008D66B /* SignUpUiState.swift */; };
 		CF070F662C2F35170008D66B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F652C2F35170008D66B /* SignUpViewModel.swift */; };
 		CF070F682C2F35BB0008D66B /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F672C2F35BB0008D66B /* SignUpViewRouter.swift */; };
+		CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F6A2C2F5ADD0008D66B /* EditTextView.swift */; };
+		CF070F6F2C2F642A0008D66B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F6E2C2F642A0008D66B /* CustomTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		CF070F632C2F34A30008D66B /* SignUpUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUiState.swift; sourceTree = "<group>"; };
 		CF070F652C2F35170008D66B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		CF070F672C2F35BB0008D66B /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
+		CF070F6A2C2F5ADD0008D66B /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
+		CF070F6E2C2F642A0008D66B /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,7 @@
 		CF070F5F2C2F2F3C0008D66B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CF070F692C2F5ACD0008D66B /* View */,
 				CF070F602C2F2F430008D66B /* Model */,
 			);
 			path = Common;
@@ -251,6 +256,23 @@
 				CF070F612C2F2F500008D66B /* Gender.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF070F692C2F5ACD0008D66B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF070F6D2C2F64060008D66B /* Style */,
+				CF070F6A2C2F5ADD0008D66B /* EditTextView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CF070F6D2C2F64060008D66B /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				CF070F6E2C2F642A0008D66B /* CustomTextField.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -331,12 +353,14 @@
 				CF070F5C2C2E19400008D66B /* SignUpView.swift in Sources */,
 				CF070F552C2E119B0008D66B /* HomeView.swift in Sources */,
 				CF070F4F2C2E11160008D66B /* SignInViewRouter.swift in Sources */,
+				CF070F6F2C2F642A0008D66B /* CustomTextField.swift in Sources */,
 				CF070F662C2F35170008D66B /* SignUpViewModel.swift in Sources */,
 				CF070F3E2C2CE7240008D66B /* SplashUiState.swift in Sources */,
 				CF070F622C2F2F500008D66B /* Gender.swift in Sources */,
 				CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */,
 				CF070F412C2CF5590008D66B /* SplashViewModel.swift in Sources */,
 				CF070F4D2C2E0C530008D66B /* SignInUiState.swift in Sources */,
+				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
 				CF070F4B2C2DF0CD0008D66B /* SplashViewRouter.swift in Sources */,
 				CF070F472C2DEF8F0008D66B /* SignInView.swift in Sources */,
 			);

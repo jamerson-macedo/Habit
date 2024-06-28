@@ -44,7 +44,6 @@ struct SignInView: View {
                         
                     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: .infinity)
                         .padding(.horizontal,32)
-                        .background(Color.white)
                         .navigationBarTitle("Login", displayMode:.inline)
                         .navigationBarHidden(navigationHidden)
                 }
@@ -57,7 +56,8 @@ struct SignInView: View {
 
 extension SignInView {
     var emailField: some View{
-        TextField("",text: $email).border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+        //TextField("",text: $email).border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+        EditTextView( placeholder: "E-mail", error: "Email Invalido", failure: email.count<5, keyboard: .emailAddress, text: $email)
     }
 }
 extension SignInView {
@@ -90,9 +90,10 @@ extension SignInView {
 }
 
 
-struct SignInView_Preview : PreviewProvider{
-    static var previews: some View{
-        let viewModel = SignInViewModel()
-        SignInView(viewModel:viewModel)
-    }
+#Preview("Light") {
+    SignInView(viewModel: SignInViewModel()).preferredColorScheme(.light)
+}
+#Preview("Dark") {
+    SignInView(viewModel:SignInViewModel()).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    
 }

@@ -9,7 +9,17 @@ import Foundation
 import SwiftUI
 import Combine
 class SignUpViewModel :ObservableObject{
+    
+    @Published var fullName = ""
+    @Published var email = ""
+    @Published var passWord = ""
+    @Published var document = ""
+    @Published var phone = ""
+    @Published var birthday = ""
+    @Published var gender = Gender.male // comecar como masculino
+    
     @Published var uiState :SignUpUiState = .none
+    
     var publisher : PassthroughSubject<Bool,Never>!
     
     

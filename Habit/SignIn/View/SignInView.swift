@@ -9,8 +9,7 @@ import SwiftUI
 
 struct SignInView: View {
     @ObservedObject var viewModel : SignInViewModel
-    @State var email = ""
-    @State var passWord = ""
+   
     
     @State var navigationHidden = true
     var body: some View {
@@ -57,19 +56,19 @@ struct SignInView: View {
 extension SignInView {
     var emailField: some View{
         //TextField("",text: $email).border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
-        EditTextView( placeholder: "E-mail", error: "Email Invalido", failure: !email.isEmail(), keyboard: .emailAddress, text: $email)
+        EditTextView( placeholder: "E-mail", error: "Email Invalido", failure: !viewModel.email.isEmail(), keyboard: .emailAddress, text: $viewModel.email)
     }
 }
 extension SignInView {
     var passWordField: some View{
-        EditTextView(placeholder: "Senha", error: "Senha deve ter 8 caracteres", failure: passWord.count<8, keyboard: .emailAddress, isSecure: true, text: $passWord)
+        EditTextView(placeholder: "Senha", error: "Senha deve ter 8 caracteres", failure: viewModel.passWord.count < 8, keyboard: .emailAddress, isSecure: true, text: $viewModel.passWord)
     }
 }
 extension SignInView {
     var enterButton: some View{
         LoadingButtonView(action: {
-            viewModel.login(email: email, password:passWord)
-        }, disabled: !email.isEmail() || passWord.count<8, showProgress: self.viewModel.uiState == SignInUiState.loading, text: "Entrar")
+            viewModel.login()
+        }, disabled: !viewModel.email.isEmail() || viewModel.passWord.count < 8, showProgress: self.viewModel.uiState == SignInUiState.loading, text: "Entrar")
     }
 }
 extension SignInView {

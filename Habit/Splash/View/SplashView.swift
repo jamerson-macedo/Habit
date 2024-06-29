@@ -50,6 +50,6 @@ extension SplashView {
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = SplashViewModel()
-        SplashView(viewModel: viewModel)
+        SplashView(viewModel: viewModel).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     }
 }

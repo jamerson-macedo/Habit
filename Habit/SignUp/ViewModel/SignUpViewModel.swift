@@ -25,11 +25,12 @@ class SignUpViewModel :ObservableObject{
     
     func signUp(){
         self.uiState = .loading
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-           // self.uiState = .error("falha no login")
-            self.uiState = .success
-            self.publisher.send(true)
-        }
+        WebService.postUser(fullname: fullName, email: email, document: document, phone: phone, gender: gender.index, birthday: birthday, password: passWord)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+//           // self.uiState = .error("falha no login")
+//            self.uiState = .success
+//            self.publisher.send(true)
+//        }
     }
 }
 

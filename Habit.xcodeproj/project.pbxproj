@@ -32,6 +32,7 @@
 		CF070F922C30ADFF0008D66B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F912C30ADFF0008D66B /* WebService.swift */; };
 		CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */; };
 		CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */; };
+		CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		CF070F912C30ADFF0008D66B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
+		CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				CF070F612C2F2F500008D66B /* Gender.swift */,
+				CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				CF070F6F2C2F642A0008D66B /* CustomTextField.swift in Sources */,
 				CF070F662C2F35170008D66B /* SignUpViewModel.swift in Sources */,
 				CF070F3E2C2CE7240008D66B /* SplashUiState.swift in Sources */,
+				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,
 				CF070F622C2F2F500008D66B /* Gender.swift in Sources */,
 				CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */,
 				CF070F412C2CF5590008D66B /* SplashViewModel.swift in Sources */,

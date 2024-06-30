@@ -29,11 +29,12 @@ enum WebService {
         
     }
     // defino que ele vai receber qualquer coisa que estenda ao encodable(no caso as estruturas la)
+    // roda em background
     private static func call <T:Encodable>(patch:Endpoint,body :T, completion: @escaping (Result)->Void){
         guard var urlRequest = completeUrl(patch: patch) else {return}
         
         guard let jsonData = try? JSONEncoder().encode(body) else {return}
-      
+        
         
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
@@ -59,35 +60,35 @@ enum WebService {
                     break
                 }
             }
-           
+            print(String(data: data, encoding: .utf8))
             print(response)
-           
+            
         }
         task.resume()
         
     }
     
-    static func postUser(request : SignUpRequest){
+    static func postUser(request : SignUpRequest, completion: @escaping (Bool?,ErrorResponse?)->Void){
         call(patch: .postUser,body: request, completion: { result in
             
             switch result{
             case .failure(let error, let data):
                 if let data = data{
                     if error == .badRequest{
-                        print(String(data: data, encoding: .utf8))
+                       
                         let decoder = JSONDecoder()
-                        let response = try? decoder.decode(SignUpResponse.self, from: data) // passando para a struct
-                        print(response?.detail)
+                        let response = try? decoder.decode(ErrorResponse.self, from: data) // passando para a struct
+                        completion(nil,response)
                     }
                 }
                 break
             case .success(let data):
-                print(String(data: data, encoding: .utf8))
+                completion(true,nil)
                 break
             }
             
             
         })
-       
+        
     }
 }

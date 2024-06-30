@@ -40,13 +40,28 @@ class SignUpViewModel :ObservableObject{
         formatter.dateFormat = "yyyy-MM-dd"
         let birthday = formatter.string(from: dateFormatted)
         
+        // main
+        WebService.postUser(request: SignUpRequest(fullName: fullName, email: email, document: document, phone: phone, gender: gender.index, birthday: birthday, password: passWord)){ successResponse,errorResponse in
+            if let error = errorResponse{
+                DispatchQueue.main.async {
+                    // delega para a main
+                    self.uiState = .error(error.detail) // passando para ui o erro do login
+                    
+                }
+            }
+            if let success = successResponse{
+                DispatchQueue.main.async {
+                    self.publisher.send(success)
+                    if success{
+                        self.uiState = .success
+                        
+                    }
+                }
+                
+            }
+            
+        }
         
-        WebService.postUser(request: SignUpRequest(fullName: fullName, email: email, document: document, phone: phone, gender: gender.index, birthday: birthday, password: passWord))
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-//           // self.uiState = .error("falha no login")
-//            self.uiState = .success
-//            self.publisher.send(true)
-//        }
     }
 }
 

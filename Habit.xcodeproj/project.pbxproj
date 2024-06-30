@@ -30,6 +30,7 @@
 		CF070F722C2F68680008D66B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F712C2F68680008D66B /* String+Extension.swift */; };
 		CF070F742C2F6BBF0008D66B /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */; };
 		CF070F922C30ADFF0008D66B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F912C30ADFF0008D66B /* WebService.swift */; };
+		CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		CF070F712C2F68680008D66B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		CF070F912C30ADFF0008D66B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			children = (
 				CF070F632C2F34A30008D66B /* SignUpUiState.swift */,
 				CF070F672C2F35BB0008D66B /* SignUpViewRouter.swift */,
+				CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				CF070F412C2CF5590008D66B /* SplashViewModel.swift in Sources */,
 				CF070F4D2C2E0C530008D66B /* SignInUiState.swift in Sources */,
 				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
+				CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */,
 				CF070F4B2C2DF0CD0008D66B /* SplashViewRouter.swift in Sources */,
 				CF070F472C2DEF8F0008D66B /* SignInView.swift in Sources */,
 			);

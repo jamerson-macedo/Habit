@@ -18,17 +18,11 @@ enum WebService {
         
     }
     
-    static func postUser(fullname:String, email : String, document:String, phone:String, gender:Int,birthday:String,password:String){
-        let json : [String:Any] = [
-            "name": fullname,
-            "email": email,
-            "document": document,
-            "phone": phone,
-            "gender": gender,
-            "birthday": birthday,
-            "password": password
-        ]
-        let jsonData = try? JSONSerialization.data(withJSONObject: json) // formato json
+    static func postUser(request : SignUpRequest){
+     
+        guard let jsonData = try? JSONEncoder().encode(request) else {return}
+        
+        
         guard var urlRequest = completeUrl(patch: .postUser) else {return}
 // É PRECISO CRIAR A REQUISIÇÃO
 //        curl -X 'POST' \

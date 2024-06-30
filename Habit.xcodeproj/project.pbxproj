@@ -33,6 +33,9 @@
 		CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */; };
 		CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */; };
 		CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */; };
+		CF4387F82C31EA0F00D3DBE8 /* SignInRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F72C31EA0F00D3DBE8 /* SignInRequest.swift */; };
+		CF4387FA2C31EAFB00D3DBE8 /* SignInResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F92C31EAFB00D3DBE8 /* SignInResponse.swift */; };
+		CF4387FC2C31F41600D3DBE8 /* SignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387FB2C31F41600D3DBE8 /* SignInError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +66,9 @@
 		CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		CF4387F72C31EA0F00D3DBE8 /* SignInRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRequest.swift; sourceTree = "<group>"; };
+		CF4387F92C31EAFB00D3DBE8 /* SignInResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInResponse.swift; sourceTree = "<group>"; };
+		CF4387FB2C31F41600D3DBE8 /* SignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				CF070F4C2C2E0C530008D66B /* SignInUiState.swift */,
+				CF4387F72C31EA0F00D3DBE8 /* SignInRequest.swift */,
+				CF4387F92C31EAFB00D3DBE8 /* SignInResponse.swift */,
+				CF4387FB2C31F41600D3DBE8 /* SignInError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,
 				CF070F742C2F6BBF0008D66B /* LoadingButtonView.swift in Sources */,
 				CF070F722C2F68680008D66B /* String+Extension.swift in Sources */,
+				CF4387F82C31EA0F00D3DBE8 /* SignInRequest.swift in Sources */,
 				CF070F682C2F35BB0008D66B /* SignUpViewRouter.swift in Sources */,
 				CF070F492C2DEFBC0008D66B /* SignInViewModel.swift in Sources */,
 				CF070F5C2C2E19400008D66B /* SignUpView.swift in Sources */,
@@ -400,8 +410,10 @@
 				CF070F412C2CF5590008D66B /* SplashViewModel.swift in Sources */,
 				CF070F4D2C2E0C530008D66B /* SignInUiState.swift in Sources */,
 				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
+				CF4387FC2C31F41600D3DBE8 /* SignInError.swift in Sources */,
 				CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */,
 				CF070F4B2C2DF0CD0008D66B /* SplashViewRouter.swift in Sources */,
+				CF4387FA2C31EAFB00D3DBE8 /* SignInResponse.swift in Sources */,
 				CF070F472C2DEF8F0008D66B /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

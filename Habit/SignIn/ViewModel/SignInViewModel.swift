@@ -33,19 +33,31 @@ class SignInViewModel : ObservableObject{
     
     func login(){
         self.uiState = .loading
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3){
-            self.uiState = .error("uSUARIO NAO ENCONTRADO")
+        WebService.login(request: SignInRequest(email: self.email, password: self.passWord)){ successResponse,errorResponse in
+            if let error = errorResponse{
+                DispatchQueue.main.async {
+                    // delega para a main
+                    self.uiState = .error(error.detail.message) // passando para ui o erro do login
+                    
+                }
+            }
+            if let success = successResponse{
+                DispatchQueue.main.async {
+                    print(success)
+                    self.uiState = .goToHomeScreen
+                }
+            }
+        }
+        
+    }
+}
+    
+    extension SignInViewModel{
+        func homeView() -> some View{
+            return SignInViewRouter.makeHomeView()
+        }
+        func signUpView() ->some View {
+            return SignInViewRouter.makeSignUpView(publisher: publisher)
         }
     }
-    
-}
-
-extension SignInViewModel{
-    func homeView() -> some View{
-        return SignInViewRouter.makeHomeView()
-    }
-    func signUpView() ->some View {
-        return SignInViewRouter.makeSignUpView(publisher: publisher)
-    }
-}
 

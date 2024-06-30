@@ -42,6 +42,7 @@ class SignUpViewModel :ObservableObject{
         
         // main
         WebService.postUser(request: SignUpRequest(fullName: fullName, email: email, document: document, phone: phone, gender: gender.index, birthday: birthday, password: passWord)){ successResponse,errorResponse in
+            
             if let error = errorResponse{
                 DispatchQueue.main.async {
                     // delega para a main
@@ -50,12 +51,20 @@ class SignUpViewModel :ObservableObject{
                 }
             }
             if let success = successResponse{
-                DispatchQueue.main.async {
-                    self.publisher.send(success)
-                    if success{
-                        self.uiState = .success
-                        
+                WebService.login(request: SignInRequest(email: self.email, password: self.passWord)){ (successResponse,errorResponse) in
+                    if let errorSignIn = errorResponse{
+                        DispatchQueue.main.async {
+                            self.uiState = .error(errorSignIn.detail.message)
+                        }
                     }
+                    if let successSignIn = successResponse{
+                        DispatchQueue.main.async {
+                            print(successSignIn)
+                            self.publisher.send(success)
+                            self.uiState = .success
+                        }
+                    }
+                    
                 }
                 
             }

@@ -31,6 +31,7 @@
 		CF070F742C2F6BBF0008D66B /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */; };
 		CF070F922C30ADFF0008D66B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F912C30ADFF0008D66B /* WebService.swift */; };
 		CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */; };
+		CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		CF070F912C30ADFF0008D66B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				CF070F632C2F34A30008D66B /* SignUpUiState.swift */,
 				CF070F672C2F35BB0008D66B /* SignUpViewRouter.swift */,
 				CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */,
+				CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */,
 				CF070F2B2C2CE4AB0008D66B /* HabitApp.swift in Sources */,
 				CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,

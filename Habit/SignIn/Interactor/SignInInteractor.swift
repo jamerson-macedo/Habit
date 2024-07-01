@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 // funciona como se fosse um repositorio
 // decide se vai vir da web ou do local
 
@@ -16,8 +17,7 @@ class SignInInteractor {
 }
 
 extension SignInInteractor {
-    func login(request :SignInRequest, completion :@escaping (SignInResponse?,SignInError?)->Void){
-        remote.login(request: request, completion: completion)
-        
+    func login(request :SignInRequest)->Future<SignInResponse,AppError>{
+        return remote.login(request: request)
     }
 }

@@ -38,6 +38,7 @@
 		CF4387FC2C31F41600D3DBE8 /* SignInError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387FB2C31F41600D3DBE8 /* SignInError.swift */; };
 		CF4388012C332F8100D3DBE8 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388002C332F8100D3DBE8 /* SignInInteractor.swift */; };
 		CF4388032C3331BA00D3DBE8 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388022C3331BA00D3DBE8 /* RemoteDataSource.swift */; };
+		CF4388052C33370900D3DBE8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388042C33370900D3DBE8 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		CF4387FB2C31F41600D3DBE8 /* SignInError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInError.swift; sourceTree = "<group>"; };
 		CF4388002C332F8100D3DBE8 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		CF4388022C3331BA00D3DBE8 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		CF4388042C33370900D3DBE8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 			children = (
 				CF070F612C2F2F500008D66B /* Gender.swift */,
 				CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */,
+				CF4388042C33370900D3DBE8 /* AppError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			files = (
 				CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */,
 				CF070F2B2C2CE4AB0008D66B /* HabitApp.swift in Sources */,
+				CF4388052C33370900D3DBE8 /* AppError.swift in Sources */,
 				CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */,
 				CF4388032C3331BA00D3DBE8 /* RemoteDataSource.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,

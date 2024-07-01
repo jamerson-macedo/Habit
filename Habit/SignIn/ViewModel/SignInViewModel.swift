@@ -17,8 +17,10 @@ class SignInViewModel : ObservableObject{
     private let publisher = PassthroughSubject<Bool, Never>()
     
     @Published var uiState: SignInUiState = .none
+    private let interactor : SignInInteractor
     // preparando para receber
-    init(){
+    init(interactor :SignInInteractor){
+        self.interactor = interactor
         cancellable = publisher.sink{ value in
             print("Usuario criado : \(value)")
             if(value){
@@ -33,7 +35,7 @@ class SignInViewModel : ObservableObject{
     
     func login(){
         self.uiState = .loading
-        WebService.login(request: SignInRequest(email: self.email, password: self.passWord)){ successResponse,errorResponse in
+       interactor.login(request: SignInRequest(email: self.email, password: self.passWord)){ successResponse,errorResponse in
             if let error = errorResponse{
                 DispatchQueue.main.async {
                     // delega para a main

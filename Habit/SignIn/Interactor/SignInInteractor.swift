@@ -11,7 +11,7 @@ import Combine
 // decide se vai vir da web ou do local
 
 class SignInInteractor {
-    private let remote : RemoteDataSource = .shared
+    private let remote : SignInRemoteDataSource = .shared
 
     
 }

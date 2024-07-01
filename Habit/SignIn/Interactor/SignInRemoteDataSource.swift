@@ -7,10 +7,10 @@
 
 import Foundation
 import Combine
-class RemoteDataSource {
+class SignInRemoteDataSource {
     // padrao singleton
     // ningume pode estanciar essa classe com o private
-    static var shared : RemoteDataSource = RemoteDataSource()
+    static var shared : SignInRemoteDataSource = SignInRemoteDataSource()
     private init() {
         
     }

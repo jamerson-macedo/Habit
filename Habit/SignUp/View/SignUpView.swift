@@ -97,8 +97,8 @@ extension SignUpView{
     }
 }
 #Preview {
-    SignUpView(viewModel: SignUpViewModel())
+    SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
 }
 #Preview {
-    SignUpView(viewModel: SignUpViewModel()).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor())).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
 }

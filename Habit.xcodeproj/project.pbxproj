@@ -41,6 +41,9 @@
 		CF4388052C33370900D3DBE8 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388042C33370900D3DBE8 /* AppError.swift */; };
 		CF4388082C333D6100D3DBE8 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388072C333D6100D3DBE8 /* SignUpInteractor.swift */; };
 		CF43880A2C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388092C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift */; };
+		CF43880C2C334DB900D3DBE8 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43880B2C334DB900D3DBE8 /* UserAuth.swift */; };
+		CF43880E2C334ED200D3DBE8 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43880D2C334ED200D3DBE8 /* LocalDataSource.swift */; };
+		CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388102C335A8B00D3DBE8 /* SplashInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		CF4388042C33370900D3DBE8 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 		CF4388072C333D6100D3DBE8 /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
 		CF4388092C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRemoteDataSource.swift; sourceTree = "<group>"; };
+		CF43880B2C334DB900D3DBE8 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		CF43880D2C334ED200D3DBE8 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		CF4388102C335A8B00D3DBE8 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 		CF070F382C2CE5260008D66B /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				CF43880F2C335A7000D3DBE8 /* Interactor */,
 				CF070F3F2C2CF5180008D66B /* ViewModel */,
 				CF070F3A2C2CE54C0008D66B /* Model */,
 				CF070F392C2CE5390008D66B /* View */,
@@ -293,6 +300,7 @@
 				CF070F612C2F2F500008D66B /* Gender.swift */,
 				CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */,
 				CF4388042C33370900D3DBE8 /* AppError.swift */,
+				CF43880B2C334DB900D3DBE8 /* UserAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				CF070F912C30ADFF0008D66B /* WebService.swift */,
+				CF43880D2C334ED200D3DBE8 /* LocalDataSource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -345,6 +354,14 @@
 			children = (
 				CF4388072C333D6100D3DBE8 /* SignUpInteractor.swift */,
 				CF4388092C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CF43880F2C335A7000D3DBE8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CF4388102C335A8B00D3DBE8 /* SplashInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -427,7 +444,9 @@
 				CF4388032C3331BA00D3DBE8 /* SignInRemoteDataSource.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,
 				CF070F742C2F6BBF0008D66B /* LoadingButtonView.swift in Sources */,
+				CF43880E2C334ED200D3DBE8 /* LocalDataSource.swift in Sources */,
 				CF070F722C2F68680008D66B /* String+Extension.swift in Sources */,
+				CF43880C2C334DB900D3DBE8 /* UserAuth.swift in Sources */,
 				CF4387F82C31EA0F00D3DBE8 /* SignInRequest.swift in Sources */,
 				CF070F682C2F35BB0008D66B /* SignUpViewRouter.swift in Sources */,
 				CF070F492C2DEFBC0008D66B /* SignInViewModel.swift in Sources */,
@@ -439,6 +458,7 @@
 				CF070F6F2C2F642A0008D66B /* CustomTextField.swift in Sources */,
 				CF070F662C2F35170008D66B /* SignUpViewModel.swift in Sources */,
 				CF070F3E2C2CE7240008D66B /* SplashUiState.swift in Sources */,
+				CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */,
 				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,
 				CF070F622C2F2F500008D66B /* Gender.swift in Sources */,
 				CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */,

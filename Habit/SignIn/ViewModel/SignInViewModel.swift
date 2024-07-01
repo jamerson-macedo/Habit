@@ -12,10 +12,11 @@ class SignInViewModel : ObservableObject{
     
     @Published var email = ""
     @Published var passWord = ""
-    
+
     private var cancellable : AnyCancellable?
     private var cancellableRequest : AnyCancellable?
     private let publisher = PassthroughSubject<Bool, Never>()
+    
     
     @Published var uiState: SignInUiState = .none
     private let interactor : SignInInteractor
@@ -35,8 +36,10 @@ class SignInViewModel : ObservableObject{
         cancellableRequest?.cancel()
     }
     
+    
     func login(){
         self.uiState = .loading
+        
        cancellableRequest = interactor.login(request: SignInRequest(email: self.email, password: self.passWord))
             .receive(on: DispatchQueue.main)
             .sink { completion in
@@ -49,7 +52,13 @@ class SignInViewModel : ObservableObject{
                 break
             }
         } receiveValue: { success in
-            print(success)
+            let dateActual = Date().timeIntervalSince1970
+            // registrando o token
+            let auth = UserAuth(idToken:success.accessToken, refreshToken: success.refreshToken, expires: dateActual+Double(success.expires), tokenType: success.tokenType)
+            // data atual + 1 hora
+            // entao o valor é o final de quanto vai durar
+            
+            self.interactor.insertAuth(userAuth: auth)
             self.uiState = .goToHomeScreen
         }
     }

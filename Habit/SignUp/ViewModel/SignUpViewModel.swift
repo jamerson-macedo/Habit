@@ -81,7 +81,10 @@ class SignUpViewModel :ObservableObject{
                                 break
                             }
                         } receiveValue: { successSignIn in
+                            // assim que faz o login ja insere os dados no banco local
                             print(success)
+                            let auth = UserAuth(idToken: successSignIn.accessToken, refreshToken: successSignIn.refreshToken, expires: Date().timeIntervalSince1970 + Double(successSignIn.expires), tokenType: successSignIn.tokenType)
+                            self.interactor.insertAuth(userAuth:auth)
                             self.publisher.send(success)
                             self.uiState = .success
                         }

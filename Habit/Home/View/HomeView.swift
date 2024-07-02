@@ -13,7 +13,7 @@ struct HomeView: View {
     // a tab clicada
     var body: some View {
         TabView(selection: $selection){
-            Text("Conteudo de Habitos \(selection)")
+            viewModel.habitView()
                 .tabItem {
                 Image(systemName: "square.grid.2x2")
                     Text("Hábitos")

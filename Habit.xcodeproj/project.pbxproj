@@ -46,6 +46,10 @@
 		CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388102C335A8B00D3DBE8 /* SplashInteractor.swift */; };
 		CF4388132C33722B00D3DBE8 /* RefreshRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388122C33722B00D3DBE8 /* RefreshRequest.swift */; };
 		CF4388152C33759A00D3DBE8 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388142C33759A00D3DBE8 /* SplashRemoteDataSource.swift */; };
+		CF4388172C3486C000D3DBE8 /* HomeViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388162C3486C000D3DBE8 /* HomeViewRouter.swift */; };
+		CF43881D2C34874800D3DBE8 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43881C2C34874800D3DBE8 /* HabitView.swift */; };
+		CF43881F2C34879200D3DBE8 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */; };
+		CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388202C34889B00D3DBE8 /* HabitUIState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +93,10 @@
 		CF4388102C335A8B00D3DBE8 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		CF4388122C33722B00D3DBE8 /* RefreshRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshRequest.swift; sourceTree = "<group>"; };
 		CF4388142C33759A00D3DBE8 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
+		CF4388162C3486C000D3DBE8 /* HomeViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRouter.swift; sourceTree = "<group>"; };
+		CF43881C2C34874800D3DBE8 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
+		CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		CF4388202C34889B00D3DBE8 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,7 @@
 		CF070F292C2CE4AB0008D66B /* Habit */ = {
 			isa = PBXGroup;
 			children = (
+				CF4388182C34870800D3DBE8 /* Habit */,
 				CF070F5F2C2F2F3C0008D66B /* Common */,
 				CF070F582C2E19160008D66B /* SignUp */,
 				CF070F502C2E116D0008D66B /* Home */,
@@ -246,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				CF070F562C2E11A70008D66B /* HomeViewModel.swift */,
+				CF4388162C3486C000D3DBE8 /* HomeViewRouter.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -372,6 +382,40 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		CF4388182C34870800D3DBE8 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				CF43881B2C34871D00D3DBE8 /* View */,
+				CF43881A2C34871600D3DBE8 /* ViewModel */,
+				CF4388192C34871000D3DBE8 /* Model */,
+			);
+			path = Habit;
+			sourceTree = "<group>";
+		};
+		CF4388192C34871000D3DBE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF4388202C34889B00D3DBE8 /* HabitUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CF43881A2C34871600D3DBE8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CF43881B2C34871D00D3DBE8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CF43881C2C34874800D3DBE8 /* HabitView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -443,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */,
+				CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */,
 				CF070F2B2C2CE4AB0008D66B /* HabitApp.swift in Sources */,
 				CF4388052C33370900D3DBE8 /* AppError.swift in Sources */,
 				CF4388152C33759A00D3DBE8 /* SplashRemoteDataSource.swift in Sources */,
@@ -469,11 +514,14 @@
 				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,
 				CF070F622C2F2F500008D66B /* Gender.swift in Sources */,
 				CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */,
+				CF43881F2C34879200D3DBE8 /* HabitViewModel.swift in Sources */,
+				CF43881D2C34874800D3DBE8 /* HabitView.swift in Sources */,
 				CF070F412C2CF5590008D66B /* SplashViewModel.swift in Sources */,
 				CF4388132C33722B00D3DBE8 /* RefreshRequest.swift in Sources */,
 				CF070F4D2C2E0C530008D66B /* SignInUiState.swift in Sources */,
 				CF4388082C333D6100D3DBE8 /* SignUpInteractor.swift in Sources */,
 				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
+				CF4388172C3486C000D3DBE8 /* HomeViewRouter.swift in Sources */,
 				CF4387FC2C31F41600D3DBE8 /* SignInError.swift in Sources */,
 				CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */,
 				CF070F4B2C2DF0CD0008D66B /* SplashViewRouter.swift in Sources */,

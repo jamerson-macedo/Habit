@@ -18,7 +18,7 @@ struct HabitView: View {
             } else {
                 NavigationView{
                     ScrollView(showsIndicators: false){
-                        VStack{
+                        VStack(spacing:12){
                             topContainer
                             addButton
                             
@@ -55,6 +55,7 @@ extension HabitView {
     var addButton:some View{
         NavigationLink(destination:Text("destino").frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)){
             Label("Criar Habito", systemImage: "plus.app")
+                .modifier(ButtonStyle())
         }.navigationTitle("Meus Hábitos").padding(.horizontal,16)
     }
 }

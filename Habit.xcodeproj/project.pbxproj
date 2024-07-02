@@ -50,6 +50,7 @@
 		CF43881D2C34874800D3DBE8 /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43881C2C34874800D3DBE8 /* HabitView.swift */; };
 		CF43881F2C34879200D3DBE8 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */; };
 		CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388202C34889B00D3DBE8 /* HabitUIState.swift */; };
+		CF4388242C34944D00D3DBE8 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388232C34944D00D3DBE8 /* ButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		CF43881C2C34874800D3DBE8 /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		CF4388202C34889B00D3DBE8 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
+		CF4388232C34944D00D3DBE8 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +325,7 @@
 		CF070F692C2F5ACD0008D66B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF4388222C34943700D3DBE8 /* Modifier */,
 				CF070F6D2C2F64060008D66B /* Style */,
 				CF070F6A2C2F5ADD0008D66B /* EditTextView.swift */,
 				CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */,
@@ -414,6 +417,14 @@
 				CF43881C2C34874800D3DBE8 /* HabitView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CF4388222C34943700D3DBE8 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				CF4388232C34944D00D3DBE8 /* ButtonStyle.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -513,6 +524,7 @@
 				CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */,
 				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,
 				CF070F622C2F2F500008D66B /* Gender.swift in Sources */,
+				CF4388242C34944D00D3DBE8 /* ButtonStyle.swift in Sources */,
 				CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */,
 				CF43881F2C34879200D3DBE8 /* HabitViewModel.swift in Sources */,
 				CF43881D2C34874800D3DBE8 /* HabitView.swift in Sources */,

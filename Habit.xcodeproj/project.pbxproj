@@ -51,6 +51,8 @@
 		CF43881F2C34879200D3DBE8 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */; };
 		CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388202C34889B00D3DBE8 /* HabitUIState.swift */; };
 		CF4388242C34944D00D3DBE8 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388232C34944D00D3DBE8 /* ButtonStyle.swift */; };
+		CF4388262C34970C00D3DBE8 /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388252C34970C00D3DBE8 /* HabitCardViewModel.swift */; };
+		CF43882A2C34986300D3DBE8 /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388292C34986300D3DBE8 /* HabitCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,8 @@
 		CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		CF4388202C34889B00D3DBE8 /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		CF4388232C34944D00D3DBE8 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		CF4388252C34970C00D3DBE8 /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
+		CF4388292C34986300D3DBE8 /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +411,7 @@
 			isa = PBXGroup;
 			children = (
 				CF43881E2C34879200D3DBE8 /* HabitViewModel.swift */,
+				CF4388252C34970C00D3DBE8 /* HabitCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 			isa = PBXGroup;
 			children = (
 				CF43881C2C34874800D3DBE8 /* HabitView.swift */,
+				CF4388292C34986300D3DBE8 /* HabitCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				CF070F4F2C2E11160008D66B /* SignInViewRouter.swift in Sources */,
 				CF070F6F2C2F642A0008D66B /* CustomTextField.swift in Sources */,
 				CF070F662C2F35170008D66B /* SignUpViewModel.swift in Sources */,
+				CF43882A2C34986300D3DBE8 /* HabitCardView.swift in Sources */,
 				CF070F3E2C2CE7240008D66B /* SplashUiState.swift in Sources */,
 				CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */,
 				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,
@@ -535,6 +542,7 @@
 				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
 				CF4388172C3486C000D3DBE8 /* HomeViewRouter.swift in Sources */,
 				CF4387FC2C31F41600D3DBE8 /* SignInError.swift in Sources */,
+				CF4388262C34970C00D3DBE8 /* HabitCardViewModel.swift in Sources */,
 				CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */,
 				CF070F4B2C2DF0CD0008D66B /* SplashViewRouter.swift in Sources */,
 				CF4387FA2C31EAFB00D3DBE8 /* SignInResponse.swift in Sources */,

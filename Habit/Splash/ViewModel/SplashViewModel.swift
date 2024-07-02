@@ -27,7 +27,8 @@ class SplashViewModel : ObservableObject {
     }
     
     func onAppear(){
-        cancellableAuth = interactor.fetchAuth().receive(on: DispatchQueue.main)
+        cancellableAuth = interactor.fetchAuth()
+            .receive(on: DispatchQueue.main)
             .sink { userAuth in
                 // se não tiver usuario
                 if userAuth == nil{
@@ -72,4 +73,8 @@ extension SplashViewModel{
     func signInView() -> some View{
         return SplashViewRouter.makeSignView()
     }
+    func homeView() -> some View {
+        return SplashViewRouter.makeHomeView()
+    }
 }
+

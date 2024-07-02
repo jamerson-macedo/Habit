@@ -16,8 +16,6 @@ class SignUpRemoteDataSource {
     }
     // implementando o combine ele espera o a resposta e a falha
    
-            
-        
    func postUser(request: SignUpRequest) -> Future<Bool,AppError>{
        return Future { promisse in
            WebService.call(path: .postUser,method: .post, body: request) { result in

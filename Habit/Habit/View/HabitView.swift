@@ -68,6 +68,8 @@ struct HabitView: View {
             }.onAppear {
                 viewModel.onAppear()
             }
+           
+          
         }.alert(isPresented: $showAlert) {
             Alert(
                 title: Text("Ops! \(alertMessage)"),
@@ -132,8 +134,8 @@ extension HabitView {
 
 
 #Preview("Light") {
-    HabitView(viewModel: HabitViewModel())
+    HabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
 }
 #Preview("Dark"){
-    HabitView(viewModel: HabitViewModel()).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    HabitView(viewModel: HabitViewModel(interactor: HabitInteractor())).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
 }

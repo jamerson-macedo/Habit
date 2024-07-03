@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import Combine
 // identifiable pelo id e equatable para comparar
 struct HabitCardViewModel: Identifiable,Equatable{
     var id : Int = 0
@@ -16,7 +17,7 @@ struct HabitCardViewModel: Identifiable,Equatable{
     var label : String = ""
     var value :String = ""
     var state : Color = .green
-    
+    var habitPublisher :PassthroughSubject<Bool,Never>
     static func == (lhs: HabitCardViewModel,rhs:HabitCardViewModel)->Bool{
         return lhs.id == rhs.id
     }
@@ -24,6 +25,6 @@ struct HabitCardViewModel: Identifiable,Equatable{
 }
 extension HabitCardViewModel {
     func habitDetailView() ->some View{
-        return HabitCardViewRouter.makeHabitDetailView(id:id,name:name,label:label)
+        return HabitCardViewRouter.makeHabitDetailView(id:id,name:name,label:label,habitPublisher: habitPublisher)
     }
 }

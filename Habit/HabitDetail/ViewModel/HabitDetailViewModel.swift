@@ -13,6 +13,9 @@ class HabitDetailViewModel :ObservableObject{
     @Published var uiState : HabitDetailUiState = .none
     @Published var value = ""
     private var cancellable :AnyCancellable?
+    
+    var cancellables = Set<AnyCancellable>()
+    var habitPublisher : PassthroughSubject<Bool,Never>?
     let id: Int
     let name : String
     let label :String
@@ -25,6 +28,9 @@ class HabitDetailViewModel :ObservableObject{
     }
     deinit{
         cancellable?.cancel()
+        for cancellable in cancellables{
+            cancellable.cancel()
+        }
     }
     
     func save(){
@@ -40,6 +46,7 @@ class HabitDetailViewModel :ObservableObject{
         }, receiveValue: { created in
             if(created){
                 self.uiState = .success
+                self.habitPublisher?.send(created) // avisando que foi criado
             }
         })
     }

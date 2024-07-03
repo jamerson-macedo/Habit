@@ -53,6 +53,14 @@ struct HabitDetailView: View {
         }
         .padding(.horizontal,8)
         .padding(.top,32)
+        .onAppear{
+            viewModel.$uiState.sink { uiState in
+                if uiState == .success{
+                    // se veio sucesso ai ele tira da principal
+                    self.presentationMode.wrappedValue.dismiss()
+                }
+            }.store(in: &viewModel.cancellables)
+        }
     }
 }
 

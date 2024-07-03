@@ -18,12 +18,19 @@ class HabitViewModel :ObservableObject{
     
     private var cancellableRequest : AnyCancellable?
     private let interactor : HabitInteractor
+    private let habitPublished = PassthroughSubject<Bool,Never>() // instancia
     
+    private var cancellableNotify : AnyCancellable?
     init(interactor:HabitInteractor){
         self.interactor=interactor
+        cancellableNotify = habitPublished.sink(receiveValue: { saved in
+            print("saved")
+            self.onAppear()
+        })
     }
     deinit{
         cancellableRequest?.cancel()
+        cancellableNotify?.cancel()
     }
     
     func onAppear(){
@@ -66,7 +73,7 @@ class HabitViewModel :ObservableObject{
                                 self.desc = "Voce esta atrasado nos Habitos"
                             }
                             
-                            return HabitCardViewModel(id:$0.id, icon: $0.iconUrl ?? "", date: lastDate,name: $0.name,label: $0.label,value: "\($0.value ?? 0)")
+                            return HabitCardViewModel(id:$0.id, icon: $0.iconUrl ?? "", date: lastDate,name: $0.name,label: $0.label,value: "\($0.value ?? 0)",habitPublisher: self.habitPublished)
                                         
                             
                         

@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Combine
 struct HabitCardView: View {
     @State private var action = false
     
@@ -105,7 +105,7 @@ struct HabitCardView: View {
                                                         name: "Tocar guitarra",
                                                         label: "horas",
                                                         value: "2",
-                                                        state: .green))
+                                                        state: .green, habitPublisher: PassthroughSubject<Bool, Never>()))
             
             HabitCardView(viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
@@ -113,7 +113,7 @@ struct HabitCardView: View {
                                                         name: "Tocar guitarra",
                                                         label: "horas",
                                                         value: "2",
-                                                        state: .green))
+                                                        state: .green, habitPublisher: PassthroughSubject<Bool, Never>()))
         }
           
         
@@ -130,7 +130,7 @@ struct HabitCardView: View {
                                                         name: "Tocar guitarra",
                                                         label: "horas",
                                                         value: "2",
-                                                        state: .green))
+                                                        state: .green, habitPublisher: PassthroughSubject<Bool, Never>()))
             
             HabitCardView(viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
@@ -138,7 +138,7 @@ struct HabitCardView: View {
                                                         name: "Tocar guitarra",
                                                         label: "horas",
                                                         value: "2",
-                                                        state: .green))
+                                                        state: .green, habitPublisher: PassthroughSubject<Bool, Never>()))
         }.frame(maxWidth: .infinity)
             .navigationTitle("Teste")
         

@@ -15,6 +15,7 @@ enum WebService {
         case login = "/auth/login"
         case refreshToken = "/auth/refresh-token"
         case habitts = "/users/me/habits"
+        case habitValues = "/users/me/habits/%d/values"
     }
     
     enum NetworkError {
@@ -42,13 +43,13 @@ enum WebService {
         case formUrl = "application/x-www-form-urlencoded"
     }
     
-    private static func completeUrl(path: Endpoint) -> URLRequest? {
-        guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else { return nil }
+    private static func completeUrl(path: String) -> URLRequest? {
+        guard let url = URL(string: "\(Endpoint.base.rawValue)\(path)") else { return nil }
         
         return URLRequest(url: url)
     }
     
-    public static func call(path: Endpoint,method:Method,
+    public static func call(path: String,method:Method,
                             contentType: ContentType,
                             data: Data?,
                             completion: @escaping (Result) -> Void) {
@@ -105,9 +106,16 @@ enum WebService {
                                            completion: @escaping (Result) -> Void) {
         guard let jsonData = try? JSONEncoder().encode(body) else { return }
         
+        call(path: path.rawValue, method:method, contentType: .json, data: jsonData, completion: completion)
+    }
+    public static func call<T: Encodable>(path: String,
+                                          method:Method = .get,
+                                           body: T,
+                                           completion: @escaping (Result) -> Void) {
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        
         call(path: path, method:method, contentType: .json, data: jsonData, completion: completion)
     }
-    
     
     
     public static func call(path: Endpoint,
@@ -115,7 +123,7 @@ enum WebService {
                                          
                                            completion: @escaping (Result) -> Void) {
        
-        call(path: path, method:method, contentType: .json, data: nil, completion: completion)
+        call(path: path.rawValue, method:method, contentType: .json, data: nil, completion: completion)
     }
     
     // chama a versão com UrlEncoded
@@ -123,13 +131,13 @@ enum WebService {
                            method:Method = .post,
                              params: [URLQueryItem],
                              completion: @escaping (Result) -> Void) {
-        guard let urlRequest = completeUrl(path: path) else { return }
+       guard let urlRequest = completeUrl(path: path.rawValue) else { return }
         
         guard let absoluteURL = urlRequest.url?.absoluteString else { return }
         var components = URLComponents(string: absoluteURL)
         components?.queryItems = params
         
-       call(path: path, method: method,
+       call(path: path.rawValue, method: method,
              contentType: .formUrl,
              data: components?.query?.data(using: .utf8),
              completion: completion)

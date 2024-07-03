@@ -34,7 +34,9 @@ struct HabitDetailView: View {
             }.padding(.horizontal,32)
             
             Text("Os registros devem ser feitos em ate 24h.\nHábitos se constroem todos os dias :)")
-            LoadingButtonView(action: {},
+            LoadingButtonView(action: {
+                viewModel.save()
+            },
                               disabled: self.viewModel.value.isEmpty, showProgress: self.viewModel.uiState == .loading, text: "Salvar")
             .padding(.horizontal,16)
             .padding(.vertical,8)
@@ -55,10 +57,10 @@ struct HabitDetailView: View {
 }
 
 #Preview {
-    HabitDetailView(viewModel: HabitDetailViewModel(id: 1, name: "tocar guitarra", label: "horas"))
+    HabitDetailView(viewModel: HabitDetailViewModel(id: 1, name: "tocar guitarra", label: "horas", interactor: HabitDetailInteractor()))
 }
 #Preview {
-    HabitDetailView(viewModel: HabitDetailViewModel(id: 1, name: "tocar guitarra", label: "horas")).preferredColorScheme(.dark)
+    HabitDetailView(viewModel: HabitDetailViewModel(id: 1, name: "tocar guitarra", label: "horas", interactor: HabitDetailInteractor())).preferredColorScheme(.dark)
     
 }
     

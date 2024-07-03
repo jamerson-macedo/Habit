@@ -11,7 +11,7 @@ import Combine
 // identifiable pelo id e equatable para comparar
 struct HabitCardViewModel: Identifiable,Equatable{
     var id : Int = 0
-    var icon:String = ""
+    var icon:String? = ""
     var date : String = ""
     var name:String = ""
     var label : String = ""

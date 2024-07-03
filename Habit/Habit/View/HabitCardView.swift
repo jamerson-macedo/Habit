@@ -28,9 +28,13 @@ struct HabitCardView: View {
             }, label: {
                 
                 HStack {
-                    
-                    Image(systemName: "pencil")
-                        .padding(.horizontal, 8)
+                    AsyncImage(url: URL(string: viewModel.icon ?? "https://placehold.co/400")) {image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        ProgressView()
+                    }
+                    .frame(width: 32, height: 32).clipped()
                     
                     Spacer()
                     

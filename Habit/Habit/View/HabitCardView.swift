@@ -101,7 +101,7 @@ struct HabitCardView: View {
         List {
             HabitCardView(viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
-                                                        date: "01/01/2021 00:00:00",
+                                                        date: "01/01/2021 00",
                                                         name: "Tocar guitarra",
                                                         label: "horas",
                                                         value: "2",

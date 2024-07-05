@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @ObservedObject var viewModel:ProfileViewModel
+    
     @State var fullName = ""
     @State var email = "jamerson_macedp"
     @State var cpf = "10292921021"
@@ -23,11 +25,14 @@ struct ProfileView: View {
                         HStack{
                             Text("Nome")
                             Spacer()
-                            TextField("Digite o nome", text: $fullName)
+                            TextField("Digite o nome", text: $viewModel.fullNameValidation.value)
                                 .keyboardType(.alphabet)
                                 .multilineTextAlignment(.trailing)
                             
                                 
+                        }
+                        if viewModel.fullNameValidation.failure{
+                            Text("Nome deve ter mais de 3 caracteres").foregroundStyle(Color.red)
                         }
                         HStack{
                             Text("E-mail")
@@ -52,16 +57,22 @@ struct ProfileView: View {
                         HStack{
                             Text("Celular")
                             Spacer()
-                            TextField("Digite o seu celular", text: $phone)
+                            TextField("Digite o seu celular", text: $viewModel.phoneValidation.value)
                                 .keyboardType(.numberPad)
                                 .multilineTextAlignment(.trailing)
                             
                         }
+                        if viewModel.phoneValidation.failure{
+                            Text("Entre com o DDD + 8 ou 9 digitos").foregroundStyle(Color.red)
+                        }
                         HStack{
                             Text("Data de nascimento")
                             Spacer()
-                            TextField("Digite a sua data de nascimento", text: $birthday)
+                            TextField("Digite a sua data de nascimento", text: $viewModel.birthdayValidation.value)
                                 .multilineTextAlignment(.trailing)
+                        }
+                        if viewModel.birthdayValidation.failure{
+                            Text("Data deve ser dd/MM/yyyy").foregroundStyle(Color.red)
                         }
                         NavigationLink(destination: GenderSelectorView(title: "Escolha um Gênero", genders: Gender.allCases, selectedgender: $selectedGender), label: {
                             Text("Gênero")
@@ -80,5 +91,5 @@ struct ProfileView: View {
 }
 
 #Preview {
-    ProfileView()
+    ProfileView(viewModel: ProfileViewModel())
 }

@@ -66,6 +66,7 @@
 		CF4388462C35E45800D3DBE8 /* HabitDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388452C35E45800D3DBE8 /* HabitDetailInteractor.swift */; };
 		CF4388592C37311800D3DBE8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388582C37311800D3DBE8 /* ProfileView.swift */; };
 		CF43885B2C37369300D3DBE8 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43885A2C37369300D3DBE8 /* GenderSelectorView.swift */; };
+		CF43885D2C376D1E00D3DBE8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43885C2C376D1E00D3DBE8 /* ProfileViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +130,7 @@
 		CF4388452C35E45800D3DBE8 /* HabitDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailInteractor.swift; sourceTree = "<group>"; };
 		CF4388582C37311800D3DBE8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CF43885A2C37369300D3DBE8 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
+		CF43885C2C376D1E00D3DBE8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -541,6 +543,7 @@
 		CF4388562C3730FC00D3DBE8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CF43885C2C376D1E00D3DBE8 /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 			files = (
 				CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */,
 				CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */,
+				CF43885D2C376D1E00D3DBE8 /* ProfileViewModel.swift in Sources */,
 				CF070F2B2C2CE4AB0008D66B /* HabitApp.swift in Sources */,
 				CF4388052C33370900D3DBE8 /* AppError.swift in Sources */,
 				CF4388152C33759A00D3DBE8 /* SplashRemoteDataSource.swift in Sources */,

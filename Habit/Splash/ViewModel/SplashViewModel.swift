@@ -35,7 +35,7 @@ class SplashViewModel : ObservableObject {
                     self.uiState = .goToSignInScreen
                 }
                 // se tiver e ja for expirado
-                else if (Date().timeIntervalSince1970 > Date().timeIntervalSince1970 + Double(userAuth!.expires)){
+                else if (Date().timeIntervalSince1970 > Double(userAuth!.expires)){
                     // chamar refresh na api
                     print("Token expirou")
                     let request = RefreshRequest(token: userAuth!.refreshToken)

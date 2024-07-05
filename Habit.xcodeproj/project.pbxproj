@@ -67,6 +67,10 @@
 		CF4388592C37311800D3DBE8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388582C37311800D3DBE8 /* ProfileView.swift */; };
 		CF43885B2C37369300D3DBE8 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43885A2C37369300D3DBE8 /* GenderSelectorView.swift */; };
 		CF43885D2C376D1E00D3DBE8 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43885C2C376D1E00D3DBE8 /* ProfileViewModel.swift */; };
+		CF43885F2C3777EC00D3DBE8 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF43885E2C3777EC00D3DBE8 /* ProfileResponse.swift */; };
+		CF4388622C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388612C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift */; };
+		CF4388642C377A4F00D3DBE8 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388632C377A4F00D3DBE8 /* ProfileInteractor.swift */; };
+		CF4388662C377BAC00D3DBE8 /* ProfileUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +135,10 @@
 		CF4388582C37311800D3DBE8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		CF43885A2C37369300D3DBE8 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
 		CF43885C2C376D1E00D3DBE8 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		CF43885E2C3777EC00D3DBE8 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		CF4388612C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteDataSource.swift; sourceTree = "<group>"; };
+		CF4388632C377A4F00D3DBE8 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUiState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,6 +532,7 @@
 		CF4388542C3730F000D3DBE8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				CF4388602C37788F00D3DBE8 /* Interactor */,
 				CF4388572C37310200D3DBE8 /* Model */,
 				CF4388562C3730FC00D3DBE8 /* ViewModel */,
 				CF4388552C3730F700D3DBE8 /* View */,
@@ -551,8 +560,19 @@
 		CF4388572C37310200D3DBE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF43885E2C3777EC00D3DBE8 /* ProfileResponse.swift */,
+				CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF4388602C37788F00D3DBE8 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CF4388612C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift */,
+				CF4388632C377A4F00D3DBE8 /* ProfileInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -626,7 +646,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */,
+				CF43885F2C3777EC00D3DBE8 /* ProfileResponse.swift in Sources */,
 				CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */,
+				CF4388662C377BAC00D3DBE8 /* ProfileUiState.swift in Sources */,
 				CF43885D2C376D1E00D3DBE8 /* ProfileViewModel.swift in Sources */,
 				CF070F2B2C2CE4AB0008D66B /* HabitApp.swift in Sources */,
 				CF4388052C33370900D3DBE8 /* AppError.swift in Sources */,
@@ -646,6 +668,7 @@
 				CF43880C2C334DB900D3DBE8 /* UserAuth.swift in Sources */,
 				CF4387F82C31EA0F00D3DBE8 /* SignInRequest.swift in Sources */,
 				CF070F682C2F35BB0008D66B /* SignUpViewRouter.swift in Sources */,
+				CF4388642C377A4F00D3DBE8 /* ProfileInteractor.swift in Sources */,
 				CF070F492C2DEFBC0008D66B /* SignInViewModel.swift in Sources */,
 				CF070F5C2C2E19400008D66B /* SignUpView.swift in Sources */,
 				CF070F552C2E119B0008D66B /* HomeView.swift in Sources */,
@@ -668,6 +691,7 @@
 				CF070F642C2F34A30008D66B /* SignUpUiState.swift in Sources */,
 				CF43881F2C34879200D3DBE8 /* HabitViewModel.swift in Sources */,
 				CF4388592C37311800D3DBE8 /* ProfileView.swift in Sources */,
+				CF4388622C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift in Sources */,
 				CF43881D2C34874800D3DBE8 /* HabitView.swift in Sources */,
 				CF070F412C2CF5590008D66B /* SplashViewModel.swift in Sources */,
 				CF4388132C33722B00D3DBE8 /* RefreshRequest.swift in Sources */,

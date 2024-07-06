@@ -15,4 +15,8 @@ extension ProfileInteractor{
     func fetchUser()->Future<ProfileResponse,AppError>{
         remote.fetchUser()
     }
+    func updateUser(id:Int,profileRequest:ProfileRequest)->Future<ProfileResponse,AppError>{
+        return remote.updateUser(id: id, profileRequest: profileRequest)
+        
+    }
 }

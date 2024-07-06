@@ -17,6 +17,7 @@ enum WebService {
         case refreshToken = "/auth/refresh-token"
         case habitts = "/users/me/habits"
         case habitValues = "/users/me/habits/%d/values"
+        case updateUser = "/users/%d"
     }
     
     enum NetworkError {

@@ -13,7 +13,7 @@ struct ProfileView: View {
         viewModel.fullNameValidation.failure || viewModel.phoneValidation.failure ||
         viewModel.birthdayValidation.failure
     }
-
+    
     var body: some View {
         ZStack{
             if case ProfileUiState.loading = viewModel.uiState{
@@ -31,7 +31,7 @@ struct ProfileView: View {
                                         .keyboardType(.alphabet)
                                         .multilineTextAlignment(.trailing)
                                     
-                                        
+                                    
                                 }
                                 if viewModel.fullNameValidation.failure{
                                     Text("Nome deve ter mais de 3 caracteres").foregroundStyle(Color.red)
@@ -44,7 +44,7 @@ struct ProfileView: View {
                                         .foregroundStyle(Color.gray)
                                         .multilineTextAlignment(.trailing)
                                     
-                                        
+                                    
                                 }
                                 HStack{
                                     Text("CPF")
@@ -54,7 +54,7 @@ struct ProfileView: View {
                                         .foregroundStyle(Color.gray)
                                         .multilineTextAlignment(.trailing)
                                     
-                                        
+                                    
                                 }
                                 HStack{
                                     Text("Celular")
@@ -89,17 +89,36 @@ struct ProfileView: View {
                     }
                     .navigationBarTitle("Editar Perfil", displayMode: .automatic)
                     .navigationBarItems(trailing: Button(action: {
-                        // salvando
+                        viewModel.updateUser()
                     }, label: {
-                        Image(systemName: "checkmark").foregroundStyle(Color.orange)
-                        
-                    })
+                        if case ProfileUiState.updateLoading = viewModel.uiState{
+                            ProgressView()
+                        }else {
+                            Image(systemName: "checkmark").foregroundStyle(Color.orange)
+                        }
+                    }).alert(isPresented: .constant(viewModel.uiState == .updateSuccess )) {
+                        Alert(title: Text("Habit"),message: Text("Dados atualizados com sucesso!"),dismissButton: .default(Text("OK")){
+                            viewModel.uiState = .none
+                        })
+                    }
                         .opacity(disableDone ? 0 : 1) // opacidade do botao
                     )
                     
                 }
             }
-           
+            if case ProfileUiState.updateError(let error) = viewModel.uiState{
+                Text("").alert(isPresented:.constant(true)){
+                    Alert(title: Text("Habit"),
+                          message: Text(error),
+                          dismissButton: .default(Text("Ok")){
+                        viewModel.uiState = .none
+                        
+                        
+                    })
+                    
+                }
+            }
+            
             if case ProfileUiState.fetchError(let error) = viewModel.uiState{
                 Text("").alert(isPresented:.constant(true), content: {
                     Alert(title: Text("Habit"),message: Text(error), dismissButton: .default(Text("Ok")))
@@ -107,7 +126,7 @@ struct ProfileView: View {
                 
             }
         }.onAppear(perform: {viewModel.fetchUser()})
-       
+        
     }
 }
 

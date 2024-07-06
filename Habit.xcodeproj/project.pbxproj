@@ -71,6 +71,7 @@
 		CF4388622C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388612C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift */; };
 		CF4388642C377A4F00D3DBE8 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388632C377A4F00D3DBE8 /* ProfileInteractor.swift */; };
 		CF4388662C377BAC00D3DBE8 /* ProfileUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */; };
+		CF4388682C39D39300D3DBE8 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388672C39D39300D3DBE8 /* ProfileRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +140,7 @@
 		CF4388612C3778AE00D3DBE8 /* ProfileRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteDataSource.swift; sourceTree = "<group>"; };
 		CF4388632C377A4F00D3DBE8 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUiState.swift; sourceTree = "<group>"; };
+		CF4388672C39D39300D3DBE8 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -562,6 +564,7 @@
 			children = (
 				CF43885E2C3777EC00D3DBE8 /* ProfileResponse.swift */,
 				CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */,
+				CF4388672C39D39300D3DBE8 /* ProfileRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -659,6 +662,7 @@
 				CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */,
 				CF43880A2C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift in Sources */,
 				CF43883B2C35D60A00D3DBE8 /* HabitDetailViewModel.swift in Sources */,
+				CF4388682C39D39300D3DBE8 /* ProfileRequest.swift in Sources */,
 				CF4388032C3331BA00D3DBE8 /* SignInRemoteDataSource.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,
 				CF4388462C35E45800D3DBE8 /* HabitDetailInteractor.swift in Sources */,

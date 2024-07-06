@@ -46,6 +46,38 @@ class ProfileRemoteDataSource {
        }
    
     }
+    func updateUser(id:Int,profileRequest:ProfileRequest)-> Future<ProfileResponse,AppError>{
+        return Future { promisse in
+            let patch = String(format: WebService.Endpoint.updateUser.rawValue, id)
+            WebService.call(path: patch,method: .put,body: profileRequest) { result in
+                switch result {
+                case .failure(_, let data):
+                    if let data = data {
+                        
+                        let decoder = JSONDecoder()
+                        let response = try? decoder.decode(ErrorResponse.self, from: data)
+                        // completion(nil, response)
+                        promisse(.failure(AppError.response(message: response?.detail ?? "Erro desconhecido")))
+                        
+                    }
+                    break
+                case .success(let data):
+                    //completion(true, nil)
+                    let decoder = JSONDecoder()
+                    let response = try? decoder.decode(ProfileResponse.self, from: data)
+                    guard let res = response else {
+                        print("LOG: ERROR PARSER \(String(data: data, encoding: .utf8)!)")
+                        return}
+                    
+                    promisse(.success(res))
+                    break
+                }
+            }
+            
+        }
+        
+        
+    }
     
 }
     

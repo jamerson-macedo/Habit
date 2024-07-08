@@ -21,8 +21,10 @@ class HabitViewModel :ObservableObject{
     private let habitPublished = PassthroughSubject<Bool,Never>() // instancia
     
     private var cancellableNotify : AnyCancellable?
-    init(interactor:HabitInteractor){
-        self.interactor=interactor
+    let isChart :Bool
+    init(isCharts:Bool,interactor:HabitInteractor){
+        self.interactor = interactor
+        self.isChart = isCharts
         cancellableNotify = habitPublished.sink(receiveValue: { saved in
             print("saved")
             self.onAppear()

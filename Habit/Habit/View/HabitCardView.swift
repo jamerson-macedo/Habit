@@ -9,32 +9,49 @@ import SwiftUI
 import Combine
 struct HabitCardView: View {
     @State private var action = false
-    
+    let isChart : Bool
     let viewModel: HabitCardViewModel
     
     var body: some View {
         ZStack(alignment: .trailing) {
-            
-            NavigationLink(
-                destination: viewModel.habitDetailView(),
-                isActive: self.$action,
-                label: {
-                    EmptyView()
-                }
-            )
+            if isChart{
+                NavigationLink(
+                    destination: viewModel.chartView(),
+                    isActive: self.$action,
+                    label: {
+                        EmptyView()
+                    }
+                )
+            }else {
+                NavigationLink(
+                    destination: viewModel.habitDetailView(),
+                    isActive: self.$action,
+                    label: {
+                        EmptyView()
+                    }
+                )
+                
+            }
+          
             
             Button(action: {
                 self.action = true
             }, label: {
                 
                 HStack {
-                    AsyncImage(url: URL(string: viewModel.icon ?? "https://placehold.co/400")) {image in
-                        image.resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } placeholder: {
-                        ProgressView()
+                    AsyncImage(url: URL(string: viewModel.icon ?? "https://placehold.co/600x400" )) {phase in
+                        if let imagem = phase.image {
+                            imagem.resizable()
+                        }
+                        else if phase.error != nil {
+                            Color.blue
+                            
+                        }
+                        else {
+                            ProgressView()
+                        }
                     }
-                    .frame(width: 32, height: 32).clipped()
+                            .frame(width: 32, height: 32).clipped()
                     
                     Spacer()
                     
@@ -83,11 +100,11 @@ struct HabitCardView: View {
                 .cornerRadius(4.0)
                 
             })
-            
-            Rectangle()
-                .frame(width: 8)
-                .foregroundColor(viewModel.state)
-            
+            if !isChart{
+                Rectangle()
+                    .frame(width: 8)
+                    .foregroundColor(viewModel.state)
+            }
         }.background(
             RoundedRectangle(cornerRadius: 4.0)
                 .stroke(Color.orange, lineWidth: 1.4)
@@ -103,7 +120,7 @@ struct HabitCardView: View {
     NavigationView {
         
         List {
-            HabitCardView(viewModel: HabitCardViewModel(id: 1,
+            HabitCardView(isChart: true, viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
                                                         date: "01/01/2021 00",
                                                         name: "Tocar guitarra",
@@ -111,7 +128,7 @@ struct HabitCardView: View {
                                                         value: "2",
                                                         state: .green, habitPublisher: PassthroughSubject<Bool, Never>()))
             
-            HabitCardView(viewModel: HabitCardViewModel(id: 1,
+            HabitCardView(isChart: true, viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
                                                         date: "01/01/2021 00:00:00",
                                                         name: "Tocar guitarra",
@@ -128,7 +145,7 @@ struct HabitCardView: View {
     NavigationView {
         
         List {
-            HabitCardView(viewModel: HabitCardViewModel(id: 1,
+            HabitCardView(isChart: false, viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
                                                         date: "01/01/2021 00:00:00",
                                                         name: "Tocar guitarra",
@@ -136,7 +153,7 @@ struct HabitCardView: View {
                                                         value: "2",
                                                         state: .green, habitPublisher: PassthroughSubject<Bool, Never>()))
             
-            HabitCardView(viewModel: HabitCardViewModel(id: 1,
+            HabitCardView(isChart: false, viewModel: HabitCardViewModel(id: 1,
                                                         icon: "https://via.placeholder.com/150",
                                                         date: "01/01/2021 00:00:00",
                                                         name: "Tocar guitarra",

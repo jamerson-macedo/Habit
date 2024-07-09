@@ -15,6 +15,7 @@ enum HabitCardViewRouter{
         return HabitDetailView(viewModel: viewModel)
     }
     static func makeChartView(id:Int) -> some View{
-        return ChartView(viewModel: ChartViewModel())
+        let viewmodel = ChartViewModel(habitId: id, interactor: ChartInteractor())
+        return ChartView(viewModel: viewmodel)
     }
 }

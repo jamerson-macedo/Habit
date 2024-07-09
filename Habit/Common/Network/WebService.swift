@@ -18,6 +18,7 @@ enum WebService {
         case habitts = "/users/me/habits"
         case habitValues = "/users/me/habits/%d/values"
         case updateUser = "/users/%d"
+        
     }
     
     enum NetworkError {
@@ -117,6 +118,11 @@ enum WebService {
         guard let jsonData = try? JSONEncoder().encode(body) else { return }
         
         call(path: path, method:method, contentType: .json, data: jsonData, completion: completion)
+    }
+    public static func call(path: String, method:Method = .get, completion: @escaping (Result) -> Void) {
+       
+        
+        call(path: path, method:method, contentType: .json, data: nil, completion: completion)
     }
     
     

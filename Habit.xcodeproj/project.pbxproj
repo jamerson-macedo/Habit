@@ -76,6 +76,10 @@
 		CF4388852C3C650B00D3DBE8 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388842C3C650B00D3DBE8 /* ChartView.swift */; };
 		CF80D5332C3DA03A0022A642 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5322C3DA03A0022A642 /* ChartViewModel.swift */; };
 		CF80D5352C3DA1C20022A642 /* BoxChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5342C3DA1C20022A642 /* BoxChartView.swift */; };
+		CF80D5372C3DAE8E0022A642 /* HabitValueReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5362C3DAE8E0022A642 /* HabitValueReponse.swift */; };
+		CF80D53A2C3DAF400022A642 /* ChartRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5392C3DAF400022A642 /* ChartRemoteDataSource.swift */; };
+		CF80D53C2C3DB11B0022A642 /* ChartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D53B2C3DB11B0022A642 /* ChartInteractor.swift */; };
+		CF80D53E2C3DB1D80022A642 /* ChartUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D53D2C3DB1D80022A642 /* ChartUiState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +155,10 @@
 		CF4388842C3C650B00D3DBE8 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		CF80D5322C3DA03A0022A642 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		CF80D5342C3DA1C20022A642 /* BoxChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxChartView.swift; sourceTree = "<group>"; };
+		CF80D5362C3DAE8E0022A642 /* HabitValueReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitValueReponse.swift; sourceTree = "<group>"; };
+		CF80D5392C3DAF400022A642 /* ChartRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRemoteDataSource.swift; sourceTree = "<group>"; };
+		CF80D53B2C3DB11B0022A642 /* ChartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInteractor.swift; sourceTree = "<group>"; };
+		CF80D53D2C3DB1D80022A642 /* ChartUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartUiState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -612,6 +620,7 @@
 		CF4388802C3C64D100D3DBE8 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				CF80D5382C3DAF290022A642 /* Interactor */,
 				CF4388832C3C64EA00D3DBE8 /* Model */,
 				CF4388822C3C64E400D3DBE8 /* ViewModel */,
 				CF4388812C3C64DF00D3DBE8 /* View */,
@@ -624,6 +633,7 @@
 			children = (
 				CF4388842C3C650B00D3DBE8 /* ChartView.swift */,
 				CF80D5342C3DA1C20022A642 /* BoxChartView.swift */,
+				CF80D53D2C3DB1D80022A642 /* ChartUiState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -639,8 +649,18 @@
 		CF4388832C3C64EA00D3DBE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF80D5362C3DAE8E0022A642 /* HabitValueReponse.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF80D5382C3DAF290022A642 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CF80D5392C3DAF400022A642 /* ChartRemoteDataSource.swift */,
+				CF80D53B2C3DB11B0022A642 /* ChartInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -767,11 +787,13 @@
 				CF4388152C33759A00D3DBE8 /* SplashRemoteDataSource.swift in Sources */,
 				CF43883D2C35D71B00D3DBE8 /* HabitDetailView.swift in Sources */,
 				CF43883F2C35DE2F00D3DBE8 /* HabitCardViewRouter.swift in Sources */,
+				CF80D53C2C3DB11B0022A642 /* ChartInteractor.swift in Sources */,
 				CF4388332C359B2A00D3DBE8 /* Date+Extension.swift in Sources */,
 				CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */,
 				CF43880A2C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift in Sources */,
 				CF43883B2C35D60A00D3DBE8 /* HabitDetailViewModel.swift in Sources */,
 				CF4388682C39D39300D3DBE8 /* ProfileRequest.swift in Sources */,
+				CF80D53E2C3DB1D80022A642 /* ChartUiState.swift in Sources */,
 				CF4388032C3331BA00D3DBE8 /* SignInRemoteDataSource.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,
 				CF4388462C35E45800D3DBE8 /* HabitDetailInteractor.swift in Sources */,
@@ -796,6 +818,7 @@
 				CF4388412C35E27C00D3DBE8 /* HabitValueRequest.swift in Sources */,
 				CF4388392C35D57B00D3DBE8 /* HabitDetailUiState.swift in Sources */,
 				CF43885B2C37369300D3DBE8 /* GenderSelectorView.swift in Sources */,
+				CF80D53A2C3DAF400022A642 /* ChartRemoteDataSource.swift in Sources */,
 				CF80D5352C3DA1C20022A642 /* BoxChartView.swift in Sources */,
 				CF4388312C3594A700D3DBE8 /* HabitInteractor.swift in Sources */,
 				CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */,
@@ -812,6 +835,7 @@
 				CF4388132C33722B00D3DBE8 /* RefreshRequest.swift in Sources */,
 				CF070F4D2C2E0C530008D66B /* SignInUiState.swift in Sources */,
 				CF4388082C333D6100D3DBE8 /* SignUpInteractor.swift in Sources */,
+				CF80D5372C3DAE8E0022A642 /* HabitValueReponse.swift in Sources */,
 				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
 				CF4388172C3486C000D3DBE8 /* HomeViewRouter.swift in Sources */,
 				CF4388852C3C650B00D3DBE8 /* ChartView.swift in Sources */,

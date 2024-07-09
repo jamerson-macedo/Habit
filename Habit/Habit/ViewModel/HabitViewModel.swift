@@ -119,3 +119,8 @@ class HabitViewModel :ObservableObject{
 //            self.uiState = .fullList(rows)        }
     }
 }
+extension HabitViewModel{
+    func habitCreateView()->some View{
+        HabitViewRouter.makeHabitCreate(habitPublisher: habitPublished)
+    }
+}

@@ -8,39 +8,44 @@
 import SwiftUI
 import Charts
 struct ChartView: View {
-    @ObservedObject var viewModel:ChartViewModel
+    @ObservedObject var viewModel: ChartViewModel
+    
     var body: some View {
-        ZStack{
-            if case ChartUiState.loading = viewModel.uiState{
+        ZStack {
+            if case ChartUiState.loading = viewModel.uiState {
                 ProgressView()
-            }else {
+            } else {
                 VStack {
-                    if case ChartUiState.emptyChart = viewModel.uiState{
-                        
+                    if case ChartUiState.emptyChart = viewModel.uiState {
                         Image(systemName: "exclamationmark.octagon.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 24, height: 24, alignment: .center)
                         
                         Text("Nenhum hábito encontrado :(")
-                    }else if case ChartUiState.error(let msg) = viewModel.uiState {
-                        
-                        Text("").alert(isPresented:.constant(true)){
-                            Alert(title: Text("Habit"),
-                                  message: Text(msg),
-                                  dismissButton: .default(Text("Ok")){
-                                
-                            })
-                            
-                        }
-                    }else {
-                        BoxChartView(entries: $viewModel.entries, dates: $viewModel.dates).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,maxHeight: 350)
+                    } else if case ChartUiState.error(let msg) = viewModel.uiState {
+                        Text("")
+                            .alert(isPresented: .constant(true)) {
+                                Alert(
+                                    title: Text("Ops! \(msg)"),
+                                    message: Text("Tentar novamente?"),
+                                    primaryButton: .default(Text("Sim")) {
+                                        // aqui executa a retentativa
+                                        viewModel.onAppear()
+                                    },
+                                    secondaryButton: .cancel()
+                                )
+                            }
+                    } else {
+                        BoxChartView(entries: $viewModel.entries, dates: $viewModel.dates)
+                            .frame(maxWidth: .infinity, maxHeight: 350)
                     }
-                    
                 }
-                
             }
-        }.onAppear(perform: viewModel.onAppear)
+        }
+        .onAppear(perform: viewModel.onAppear)
+        
+        
     }
 }
 

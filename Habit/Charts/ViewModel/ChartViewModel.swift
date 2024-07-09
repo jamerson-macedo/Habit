@@ -11,32 +11,49 @@ import Combine
 import Charts
 class ChartViewModel : ObservableObject{
     
-    @Published var uiState :ChartUiState = .loading
-    @Published var entries: [ChartDataEntry] = []
-    @Published var dates : [String] = []
-    private let habitId :Int
-    private var cancellable : AnyCancellable?
-    private let interactor : ChartInteractor
-    init(habitId:Int,interactor:ChartInteractor){
+    @Published var uiState = ChartUiState.loading
+      
+      @Published var entries: [ChartDataEntry] = []
+      
+      @Published var dates: [String] = []
+      
+      private var cancellable: AnyCancellable?
+      
+      private let habitId: Int
+      private let interactor: ChartInteractor
+      
+      init(habitId: Int, interactor: ChartInteractor) {
         self.habitId = habitId
         self.interactor = interactor
-    }
-    deinit{
+      }
+      
+      deinit {
         cancellable?.cancel()
-    }
-    func onAppear(){
-        cancellable = interactor.fetchHabiValues(habitId: habitId).receive(on: DispatchQueue.main).sink(receiveCompletion: { completion in
-            switch(completion){
-            case .failure(let error):
-                self.uiState = .error(error.message ?? "Erro desconhecido")
-                break
-            case .finished:
+      }
+      
+      func onAppear() {
+          cancellable = interactor.fetchHabiValues(habitId: habitId)
+          .receive(on: DispatchQueue.main)
+          .sink(receiveCompletion: { completion in
+            switch(completion) {
+              case .failure(let appError):
+                self.uiState = .error(appError.message ?? "erro")
+              case .finished:
                 break
             }
-        }, receiveValue: {response in
-        print(response)
-            
-        })
-    }
-    
+          }, receiveValue: { res in
+            if res.isEmpty {
+              self.uiState = .emptyChart
+            } else {
+              self.dates = res.map { $0.createdDate }
+              
+              // [0 ... N] , [HabitValueResponse]
+              self.entries = zip(res.startIndex..<res.endIndex, res).map { index, response in
+                ChartDataEntry(x: Double(index), y: Double(response.value))
+              }
+              self.uiState = .fullChart
+              print()
+            }
+          })
+      }
 }

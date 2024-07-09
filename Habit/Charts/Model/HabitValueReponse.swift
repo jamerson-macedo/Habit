@@ -17,7 +17,7 @@ struct HabitValueReponse :Decodable{
          case id
         case value
         case habitid = "habit_id"
-        case createdDate = "created_Date"
+        case createdDate = "created_date"
     }
     
 }

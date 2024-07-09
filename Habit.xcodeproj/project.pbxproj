@@ -74,6 +74,8 @@
 		CF4388662C377BAC00D3DBE8 /* ProfileUiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */; };
 		CF4388682C39D39300D3DBE8 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388672C39D39300D3DBE8 /* ProfileRequest.swift */; };
 		CF4388852C3C650B00D3DBE8 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4388842C3C650B00D3DBE8 /* ChartView.swift */; };
+		CF80D5332C3DA03A0022A642 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5322C3DA03A0022A642 /* ChartViewModel.swift */; };
+		CF80D5352C3DA1C20022A642 /* BoxChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5342C3DA1C20022A642 /* BoxChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +149,8 @@
 		CF4388652C377BAC00D3DBE8 /* ProfileUiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUiState.swift; sourceTree = "<group>"; };
 		CF4388672C39D39300D3DBE8 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		CF4388842C3C650B00D3DBE8 /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		CF80D5322C3DA03A0022A642 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		CF80D5342C3DA1C20022A642 /* BoxChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +623,7 @@
 			isa = PBXGroup;
 			children = (
 				CF4388842C3C650B00D3DBE8 /* ChartView.swift */,
+				CF80D5342C3DA1C20022A642 /* BoxChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -626,6 +631,7 @@
 		CF4388822C3C64E400D3DBE8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				CF80D5322C3DA03A0022A642 /* ChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -776,6 +782,7 @@
 				CF4387F82C31EA0F00D3DBE8 /* SignInRequest.swift in Sources */,
 				CF070F682C2F35BB0008D66B /* SignUpViewRouter.swift in Sources */,
 				CF4388642C377A4F00D3DBE8 /* ProfileInteractor.swift in Sources */,
+				CF80D5332C3DA03A0022A642 /* ChartViewModel.swift in Sources */,
 				CF070F492C2DEFBC0008D66B /* SignInViewModel.swift in Sources */,
 				CF070F5C2C2E19400008D66B /* SignUpView.swift in Sources */,
 				CF070F552C2E119B0008D66B /* HomeView.swift in Sources */,
@@ -789,6 +796,7 @@
 				CF4388412C35E27C00D3DBE8 /* HabitValueRequest.swift in Sources */,
 				CF4388392C35D57B00D3DBE8 /* HabitDetailUiState.swift in Sources */,
 				CF43885B2C37369300D3DBE8 /* GenderSelectorView.swift in Sources */,
+				CF80D5352C3DA1C20022A642 /* BoxChartView.swift in Sources */,
 				CF4388312C3594A700D3DBE8 /* HabitInteractor.swift in Sources */,
 				CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */,
 				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,

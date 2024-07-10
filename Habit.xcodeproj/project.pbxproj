@@ -83,6 +83,7 @@
 		CF80D5452C3DF53D0022A642 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5442C3DF53D0022A642 /* HabitCreateView.swift */; };
 		CF80D5472C3DF5BE0022A642 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5462C3DF5BE0022A642 /* HabitCreateViewModel.swift */; };
 		CF80D5492C3DF9350022A642 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5482C3DF9350022A642 /* HabitViewRouter.swift */; };
+		CF80D54B2C3F049B0022A642 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D54A2C3F049B0022A642 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,7 @@
 		CF80D5442C3DF53D0022A642 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
 		CF80D5462C3DF5BE0022A642 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		CF80D5482C3DF9350022A642 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
+		CF80D54A2C3F049B0022A642 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,6 +421,7 @@
 				CF070F6D2C2F64060008D66B /* Style */,
 				CF070F6A2C2F5ADD0008D66B /* EditTextView.swift */,
 				CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */,
+				CF80D54A2C3F049B0022A642 /* ImagePickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 				CF80D53A2C3DAF400022A642 /* ChartRemoteDataSource.swift in Sources */,
 				CF80D5352C3DA1C20022A642 /* BoxChartView.swift in Sources */,
 				CF4388312C3594A700D3DBE8 /* HabitInteractor.swift in Sources */,
+				CF80D54B2C3F049B0022A642 /* ImagePickerView.swift in Sources */,
 				CF4388112C335A8B00D3DBE8 /* SplashInteractor.swift in Sources */,
 				CF80D5472C3DF5BE0022A642 /* HabitCreateViewModel.swift in Sources */,
 				CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */,

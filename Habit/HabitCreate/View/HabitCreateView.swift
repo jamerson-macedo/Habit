@@ -21,14 +21,19 @@ struct HabitCreateView: View {
     var body: some View {
         ScrollView(showsIndicators: false){
             VStack(alignment :.center,spacing: 12){
+                
                 Button(action: {
                     self.shoudPresentCamera = true
                 }, label: {
                     VStack{
-                        Image(systemName: "camera.fill").resizable().scaledToFit().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/,height: 100).foregroundColor(Color.orange)
+                        viewModel.image!
+                            .resizable().scaledToFit().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/,height: 100).foregroundColor(Color.orange)
                         Text("Clique aqui para enviar").foregroundStyle(Color.orange)
                     }
                 }).padding(.bottom,12)
+                    .sheet(isPresented: $shoudPresentCamera){
+                        ImagePickerView(isPresented: $shoudPresentCamera, image: self.$viewModel.image, imageData: self.$viewModel.imageData, sourceType:.photoLibrary)
+                    }
             }
             VStack{
                 TextField("Ëscreva aqui o nome do Hábito",text: $viewModel.name)

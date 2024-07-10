@@ -84,6 +84,9 @@
 		CF80D5472C3DF5BE0022A642 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5462C3DF5BE0022A642 /* HabitCreateViewModel.swift */; };
 		CF80D5492C3DF9350022A642 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5482C3DF9350022A642 /* HabitViewRouter.swift */; };
 		CF80D54B2C3F049B0022A642 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D54A2C3F049B0022A642 /* ImagePickerView.swift */; };
+		CF80D54D2C3F0F020022A642 /* HabitCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D54C2C3F0F020022A642 /* HabitCreateRequest.swift */; };
+		CF80D54F2C3F0F560022A642 /* HabitCreateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D54E2C3F0F560022A642 /* HabitCreateDataSource.swift */; };
+		CF80D5512C3F107D0022A642 /* HabitCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5502C3F107D0022A642 /* HabitCreateInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -167,6 +170,9 @@
 		CF80D5462C3DF5BE0022A642 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		CF80D5482C3DF9350022A642 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
 		CF80D54A2C3F049B0022A642 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		CF80D54C2C3F0F020022A642 /* HabitCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateRequest.swift; sourceTree = "<group>"; };
+		CF80D54E2C3F0F560022A642 /* HabitCreateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateDataSource.swift; sourceTree = "<group>"; };
+		CF80D5502C3F107D0022A642 /* HabitCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -704,6 +710,7 @@
 		CF80D5422C3DF5290022A642 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF80D54C2C3F0F020022A642 /* HabitCreateRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -711,6 +718,8 @@
 		CF80D5432C3DF5300022A642 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				CF80D54E2C3F0F560022A642 /* HabitCreateDataSource.swift */,
+				CF80D5502C3F107D0022A642 /* HabitCreateInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -834,6 +843,7 @@
 				CF4388212C34889B00D3DBE8 /* HabitUIState.swift in Sources */,
 				CF4388662C377BAC00D3DBE8 /* ProfileUiState.swift in Sources */,
 				CF43885D2C376D1E00D3DBE8 /* ProfileViewModel.swift in Sources */,
+				CF80D54F2C3F0F560022A642 /* HabitCreateDataSource.swift in Sources */,
 				CF070F2B2C2CE4AB0008D66B /* HabitApp.swift in Sources */,
 				CF4388052C33370900D3DBE8 /* AppError.swift in Sources */,
 				CF4388152C33759A00D3DBE8 /* SplashRemoteDataSource.swift in Sources */,
@@ -845,6 +855,7 @@
 				CF43880A2C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift in Sources */,
 				CF43883B2C35D60A00D3DBE8 /* HabitDetailViewModel.swift in Sources */,
 				CF4388682C39D39300D3DBE8 /* ProfileRequest.swift in Sources */,
+				CF80D5512C3F107D0022A642 /* HabitCreateInteractor.swift in Sources */,
 				CF80D53E2C3DB1D80022A642 /* ChartUiState.swift in Sources */,
 				CF4388032C3331BA00D3DBE8 /* SignInRemoteDataSource.swift in Sources */,
 				CF070F3C2C2CE57E0008D66B /* SplashView.swift in Sources */,
@@ -894,6 +905,7 @@
 				CF070F6B2C2F5ADD0008D66B /* EditTextView.swift in Sources */,
 				CF80D5452C3DF53D0022A642 /* HabitCreateView.swift in Sources */,
 				CF4388172C3486C000D3DBE8 /* HomeViewRouter.swift in Sources */,
+				CF80D54D2C3F0F020022A642 /* HabitCreateRequest.swift in Sources */,
 				CF4388852C3C650B00D3DBE8 /* ChartView.swift in Sources */,
 				CF4388442C35E2BA00D3DBE8 /* HabitDetailRemoteDataSource.swift in Sources */,
 				CF4387FC2C31F41600D3DBE8 /* SignInError.swift in Sources */,
@@ -1039,6 +1051,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Habit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = " a aplicação precisa da camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1068,6 +1081,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Habit/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = " a aplicação precisa da camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -22,7 +22,7 @@ struct ChartView: View {
                             .scaledToFit()
                             .frame(width: 24, height: 24, alignment: .center)
                         
-                        Text("Nenhum hábito encontrado :(")
+                        Text("Nenhum Grafico encontradp :(")
                     } else if case ChartUiState.error(let msg) = viewModel.uiState {
                         Text("")
                             .alert(isPresented: .constant(true)) {

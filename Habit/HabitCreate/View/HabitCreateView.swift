@@ -93,9 +93,10 @@ struct HabitCreateView: View {
         .padding(.horizontal, 8)
         .padding(.top, 32)
         .onAppear {
-            viewModel.$uiState.sink { uiState in
+            viewModel.$uiState.receive(on: DispatchQueue.main).sink { uiState in
                 if uiState == .success {
-                   // self.presentationMode.wrappedValue.dismiss()
+                    print("Received uiState: \(uiState)")
+                  self.presentationMode.wrappedValue.dismiss()
                 }
             }.store(in: &viewModel.cancellables)
         }

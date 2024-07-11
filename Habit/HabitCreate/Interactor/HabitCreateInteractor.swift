@@ -8,15 +8,14 @@
 import Foundation
 import Combine
 class HabitCreateInteractor {
-    
-    private let remote : HabitCreateDataSource = .shared
-   
-
-    
+  
+  private let remote: HabitCreateDataSource = .shared
+  
 }
 
 extension HabitCreateInteractor {
-    func save(request :HabitCreateRequest)->Future<Void,AppError>{
-        remote.save(request: request)
-    }
+  
+  func save(habitCreateRequest request: HabitCreateRequest) -> Future<Void, AppError> {
+      return remote.save(request: request)
+  }
 }

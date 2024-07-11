@@ -12,6 +12,7 @@ struct EditTextView :View{
     var error :String? = nil
     var failure : Bool? = nil
     var keyboard:UIKeyboardType = .default
+    var autocapitalization : UITextAutocapitalizationType = .none
     var isSecure : Bool =  false
     @Binding var text :String// tem que ser bind pq ele vai ser chamado por ouyto
     var body: some View{
@@ -24,6 +25,7 @@ struct EditTextView :View{
             }else {
                 TextField(placeholder,text: $text).foregroundStyle(Color("textColor"))
                     .keyboardType(keyboard)
+                    .autocapitalization(autocapitalization)
                     .textFieldStyle(CustomTextField())
             }
             

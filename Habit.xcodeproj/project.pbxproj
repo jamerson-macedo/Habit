@@ -31,6 +31,7 @@
 		CF070F722C2F68680008D66B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F712C2F68680008D66B /* String+Extension.swift */; };
 		CF070F742C2F6BBF0008D66B /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */; };
 		CF070F922C30ADFF0008D66B /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF070F912C30ADFF0008D66B /* WebService.swift */; };
+		CF1F9AA12C459F90004F17FB /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1F9AA02C459F90004F17FB /* Mask.swift */; };
 		CF4387F22C31CCFC00D3DBE8 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */; };
 		CF4387F42C31DACD00D3DBE8 /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */; };
 		CF4387F62C31DD9700D3DBE8 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */; };
@@ -117,6 +118,7 @@
 		CF070F712C2F68680008D66B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		CF070F912C30ADFF0008D66B /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		CF1F9AA02C459F90004F17FB /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
 		CF4387F12C31CCFC00D3DBE8 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		CF4387F32C31DACD00D3DBE8 /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 		CF4387F52C31DD9700D3DBE8 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 		CF070F5F2C2F2F3C0008D66B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CF1F9A9F2C459F80004F17FB /* Util */,
 				CF070F8F2C30ADDC0008D66B /* Network */,
 				CF070F702C2F68480008D66B /* Lang */,
 				CF070F692C2F5ACD0008D66B /* View */,
@@ -456,6 +459,14 @@
 				CF43880D2C334ED200D3DBE8 /* LocalDataSource.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CF1F9A9F2C459F80004F17FB /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CF1F9AA02C459F90004F17FB /* Mask.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		CF4387FF2C332F6B00D3DBE8 /* Interactor */ = {
@@ -915,6 +926,7 @@
 				CF070F4B2C2DF0CD0008D66B /* SplashViewRouter.swift in Sources */,
 				CF4387FA2C31EAFB00D3DBE8 /* SignInResponse.swift in Sources */,
 				CF070F472C2DEF8F0008D66B /* SignInView.swift in Sources */,
+				CF1F9AA12C459F90004F17FB /* Mask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

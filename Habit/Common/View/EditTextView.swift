@@ -10,6 +10,7 @@ struct EditTextView :View{
     
     var placeholder:String = ""
     var error :String? = nil
+    var mask : String? = nil
     var failure : Bool? = nil
     var keyboard:UIKeyboardType = .default
     var autocapitalization : UITextAutocapitalizationType = .none
@@ -27,6 +28,12 @@ struct EditTextView :View{
                     .keyboardType(keyboard)
                     .autocapitalization(autocapitalization)
                     .textFieldStyle(CustomTextField())
+                    .onChange(of: text){ value in
+                        if let mask = mask{
+                            Mask.mask(mask:mask, value:value, text:&text)
+                        }
+                        
+                    }
             }
             
             

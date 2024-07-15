@@ -59,7 +59,7 @@ extension SignUpView{
 }
 extension SignUpView{
     var documentField : some View{
-        EditTextView(placeholder: "CPF", error: "CPF invalido", failure: viewModel.document.count != 11, keyboard: .numberPad, isSecure: false, text: $viewModel.document)
+        EditTextView(placeholder: "CPF", error: "CPF invalido", mask:"###.###.###-##", failure: viewModel.document.count != 14, keyboard: .numberPad, isSecure: false, text: $viewModel.document)
     }
 }
 extension SignUpView{
@@ -74,13 +74,13 @@ extension SignUpView{
 }
 extension SignUpView{
     var phoneField : some View{
-        EditTextView(placeholder: "Telefone", error: "TEntre com o DDD + 8 ou 9 digitos", failure: viewModel.phone.count < 10 || viewModel.phone.count >= 12, keyboard: .numberPad, isSecure: false, text: $viewModel.phone)
+        EditTextView(placeholder: "Telefone", error: "TEntre com o DDD + 8 ou 9 digitos", mask: "(##) ####-####", failure: viewModel.phone.count < 14 || viewModel.phone.count > 15, keyboard: .numberPad, isSecure: false, text: $viewModel.phone)
         
     }
 }
 extension SignUpView{
     var birthDayField : some View{
-        EditTextView(placeholder: "Data de Nascimento", error: "Data deve ser dd/MM/yyyy", failure: viewModel.birthday.count != 10, keyboard: .default, isSecure: false, text: $viewModel.birthday)
+        EditTextView(placeholder: "Data de Nascimento", error: "Data deve ser dd/MM/yyyy", mask: "##/##/####", failure: viewModel.birthday.count != 10, keyboard: .numberPad, isSecure: false, text: $viewModel.birthday)
     }
 }
 extension SignUpView{
@@ -90,8 +90,8 @@ extension SignUpView{
         }, disabled: !viewModel.email.isEmail() ||
                           viewModel.passWord.count < 8 ||
                           viewModel.fullName.count<3 ||
-                          viewModel.document.count != 11 ||
-                          viewModel.phone.count < 10 || viewModel.phone.count >= 12 ||
+                          viewModel.document.count != 14 ||
+                          viewModel.phone.count < 14 || viewModel.phone.count > 15 ||
                           viewModel.birthday.count != 10, showProgress: self.viewModel.uiState == SignUpUiState.loading, text: "Realize Seu cadastro"
         )
     }

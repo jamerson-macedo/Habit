@@ -88,6 +88,7 @@
 		CF80D54D2C3F0F020022A642 /* HabitCreateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D54C2C3F0F020022A642 /* HabitCreateRequest.swift */; };
 		CF80D54F2C3F0F560022A642 /* HabitCreateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D54E2C3F0F560022A642 /* HabitCreateDataSource.swift */; };
 		CF80D5512C3F107D0022A642 /* HabitCreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF80D5502C3F107D0022A642 /* HabitCreateInteractor.swift */; };
+		CFF42BD72C471E690035BA19 /* ProfileEditText.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF42BD62C471E690035BA19 /* ProfileEditText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +176,7 @@
 		CF80D54C2C3F0F020022A642 /* HabitCreateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateRequest.swift; sourceTree = "<group>"; };
 		CF80D54E2C3F0F560022A642 /* HabitCreateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateDataSource.swift; sourceTree = "<group>"; };
 		CF80D5502C3F107D0022A642 /* HabitCreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateInteractor.swift; sourceTree = "<group>"; };
+		CFF42BD62C471E690035BA19 /* ProfileEditText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -431,6 +433,7 @@
 				CF070F6A2C2F5ADD0008D66B /* EditTextView.swift */,
 				CF070F732C2F6BBF0008D66B /* LoadingButtonView.swift */,
 				CF80D54A2C3F049B0022A642 /* ImagePickerView.swift */,
+				CFF42BD62C471E690035BA19 /* ProfileEditText.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -864,6 +867,7 @@
 				CF4388332C359B2A00D3DBE8 /* Date+Extension.swift in Sources */,
 				CF070F572C2E11A70008D66B /* HomeViewModel.swift in Sources */,
 				CF43880A2C333E2D00D3DBE8 /* SignUpRemoteDataSource.swift in Sources */,
+				CFF42BD72C471E690035BA19 /* ProfileEditText.swift in Sources */,
 				CF43883B2C35D60A00D3DBE8 /* HabitDetailViewModel.swift in Sources */,
 				CF4388682C39D39300D3DBE8 /* ProfileRequest.swift in Sources */,
 				CF80D5512C3F107D0022A642 /* HabitCreateInteractor.swift in Sources */,

@@ -20,10 +20,10 @@ Aplicativo do curso do thiago aguiar sobre gerenciamento de hábitos
 ## Layout mobile
 <p float="center">
   <img src="FOTOS/login.png" width="250" />
-  <img src="FOTOS/cadastro.jpg" width="250" />
-  <img src="FOTOS/home" width="250" />
-    <img src="FOTOS/graficos" width="250" />
-      <img src="FOTOS/edit" width="250" />
+  <img src="FOTOS/cadastro.png" width="250" />
+  <img src="FOTOS/home.png" width="250" />
+    <img src="FOTOS/graficos.png" width="250" />
+      <img src="FOTOS/edit.png" width="250" />
 
 
 </p>

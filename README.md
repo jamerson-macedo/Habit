@@ -1,4 +1,4 @@
-# Instagram Complete
+# Habit 
 Aplicativo do curso do thiago aguiar sobre gerenciamento de hábitos
 
 # Funcionalidades

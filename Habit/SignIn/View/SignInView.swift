@@ -96,9 +96,9 @@ extension SignInView {
 
 
 #Preview("Light") {
-    SignInView(viewModel: SignInViewModel(interactor: SignInInteractor())).preferredColorScheme(.light)
+    SignInView(viewModel: SignInViewModel(interactor: SignInInteractor(),homeviewModel: HomeViewModel())).preferredColorScheme(.light)
 }
 #Preview("Dark") {
-    SignInView(viewModel:SignInViewModel(interactor: SignInInteractor())).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+    SignInView(viewModel:SignInViewModel(interactor: SignInInteractor(),homeviewModel: HomeViewModel())).preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
     
 }

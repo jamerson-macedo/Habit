@@ -10,7 +10,9 @@ import SwiftUI
 enum SplashViewRouter {
     // tipo o object do kotlin
     static func makeSignView() -> some View{
-        let viewModel = SignInViewModel(interactor: SignInInteractor())
+        
+        let homeViewModel = HomeViewModel() // DEIXANDO PREPARADO
+        let viewModel = SignInViewModel(interactor: SignInInteractor(),homeviewModel:homeViewModel)
         return SignInView(viewModel: viewModel)
     }
     static func makeHomeView()->some View{
